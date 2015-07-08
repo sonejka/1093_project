@@ -144,6 +144,49 @@ $accent-color-2: #7bc5c4;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "LatoBlack";
+  src: url('../fonts/Lato/lato-black.eot');
+  src: url('../fonts/Lato/lato-black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Lato/lato-black.woff') format('woff'),
+  url('../fonts/Lato/lato-black.ttf') format('truetype'),
+  url('../fonts/Lato/lato-black.svg#latoblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LatoBold";
+  src: url('../fonts/Lato/lato-bold.eot');
+  src: url('../fonts/Lato/lato-bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Lato/lato-bold.woff') format('woff'),
+  url('../fonts/Lato/lato-bold.ttf') format('truetype'),
+  url('../fonts/Lato/lato-bold.svg#latobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: url('../fonts/Montserrat/montserrat-bold.eot');
+  src: url('../fonts/Montserrat/montserrat-bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Montserrat/montserrat-bold.woff') format('woff'),
+  url('../fonts/Montserrat/montserrat-bold.ttf') format('truetype'),
+  url('../fonts/Montserrat/montserrat-bold.svg#montserratbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: url('../fonts/Montserrat/montserrat-regular.eot');
+  src: url('../fonts/Montserrat/montserrat-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Montserrat/montserrat-regular.woff') format('woff'),
+  url('../fonts/Montserrat/montserrat-regular.ttf') format('truetype'),
+  url('../fonts/Montserrat/montserrat-regular.svg#montserratregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*------------------------------------*\
     COMMON STYLES
@@ -187,12 +230,14 @@ p {
   background: url($image_dir + "header_bg.jpg") no-repeat center 0;
   background-size: cover;
   height: 680px;
+  position: relative;
 }
 
 header {
   padding: 27px 0 26px 0;
   position: fixed;
   width: 100%;
+  z-index: 9999;
   &.sticky {
     background: #fad271;
   }
@@ -201,7 +246,7 @@ header {
 .header-container {
   @extend .content-wrap;
   position: relative;
-  padding-left: 218px;
+  padding-left: 234px;
 }
 
 .logo {
@@ -211,17 +256,16 @@ header {
   width: 218px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 16px;
 }
 
-.topnav {
+.top-nav {
   padding-left: 16px;
   li {
     display: inline-block;
+    padding: 0 16px;
     a {
-      display: inline-block;
       color: #fff;
-      padding: 0 16px;
       line-height: 26px;
       text-transform: uppercase;
       text-decoration: none;
@@ -231,7 +275,37 @@ header {
       &.active {
         color: $accent-color-1;
         font-weight: bold;
+        font-family: "LatoBlack", sans-serif;
       }
+    }
+  }
+}
+
+.login-nav {
+  float: right;
+  li {
+    display: inline-block;
+    padding: 0 16px;
+    a {
+      font-family: "LatoBold", sans-serif;
+      color: #fff;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .icon-hotel {
+      background: url($image_dir + "icon-hotel.png") 0 0 no-repeat;
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      margin-right: 7px;
+    }
+    .icon-traveler {
+      @extend .icon-hotel;
+      background: url($image_dir + "icon-traveler.png") 0 0 no-repeat;
     }
   }
 }
@@ -240,13 +314,147 @@ header {
   .logo {
     background-position: 0 -26px;
   }
-  .topnav a {
+  .top-nav a {
     color: #44474c;
     &.active {
       color: #44474c;
     }
   }
+  .login-nav {
+    li {
+      a {
+        color: #44474c;
+      }
+      .icon-hotel {
+        background-position: 0 -16px;
+
+      }
+      .icon-traveler {
+        background-position: 0 -16px;
+      }
+    }
+  }
 }
 
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+  text-align: center;
+  h1 {
+    font-family: "MontserratBold", sans-serif;
+    font-size: 41px;
+    line-height: 39px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: $accent-color-1;
+    padding-bottom: 10px;
+  }
+  p {
+    font-family: "MontserratRegular", sans-serif;
+    font-size: 24px;
+    line-height: 39px;
+    color: #fff;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  a {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: $accent-color-2;
+    box-shadow: 2.5px 4.33px 5px 0 rgba(0, 0, 0, 0.35);
+    min-width: 259px;
+    height: 45px;
+    margin-top: 10px;
+    line-height: 45px;
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-family: "LatoBlack", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    &:hover {
+      color: #44474c;
+      background-color: $accent-color-1;
+    }
+  }
+}
+
+/*------------------------------------*\
+    SECTION
+\*------------------------------------*/
+
+section {
+  @extend .content-wrap;
+  padding: 80px 0;
+  blockquote {
+    font-size: 24px;
+    font-family: "LatoRegular", sans-serif;
+    text-align: center;
+    strong {
+      color: $accent-color-2;
+      font-family: "LatoBlack", sans-serif;
+    }
+  }
+}
+
+.statbar-1 {
+  overflow: hidden;
+  li {
+    position: relative;
+    float: left;
+    width: 33.3%;
+    height: 275px;
+    padding-top: 60px;
+    background: $accent-color-1;
+    h3 {
+      color: #fff;
+      font-family: "MontserratBold", sans-serif;
+      font-size: 108px;
+      line-height: .7;
+      max-width: 220px;
+      margin: auto;
+    }
+    p {
+      color: #44474c;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: "LatoRegular", sans-serif;
+      max-width: 220px;
+      margin: auto;
+      padding: 20px 0 10px;
+      strong {
+        font-family: "LatoBlack", sans-serif;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 59px;
+      height: 4px;
+      background: #fff;
+      border: 0;
+      left: calc((100% - 220px) / 2);
+      bottom: 40px;
+    }
+  }
+
+  .statbar-item-1 {
+    background: url($image_dir + "statbar-item-1.jpg") 0 0 no-repeat;
+  }
+  .statbar-item-2 {
+    background: url($image_dir + "statbar-item-2.jpg") 0 0 no-repeat;
+  }
+  .statbar-item-3 {
+    background: url($image_dir + "statbar-item-3.jpg") 0 0 no-repeat;
+    p {
+      color: $accent-color-1;
+    }
+  }
 
 
+}
