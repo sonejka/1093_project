@@ -1,0 +1,292 @@
+/*------------------------------------*    RESET STYLES
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*------------------------------------*    VARIABLES
+\*------------------------------------*/
+/*------------------------------------*    MIXINS
+\*------------------------------------*/
+/*------------------------------------*    FONT-FACE
+\*------------------------------------*/
+@font-face {
+  font-family: "LatoRegular";
+  src: url("../fonts/Lato/lato-regular.eot");
+  src: url("../fonts/Lato/lato-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-regular.woff") format("woff"), url("../fonts/Lato/lato-regular.ttf") format("truetype"), url("../fonts/Lato/lato-regular.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "LatoBlack";
+  src: url("../fonts/Lato/lato-black.eot");
+  src: url("../fonts/Lato/lato-black.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-black.woff") format("woff"), url("../fonts/Lato/lato-black.ttf") format("truetype"), url("../fonts/Lato/lato-black.svg#latoblack") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "LatoBold";
+  src: url("../fonts/Lato/lato-bold.eot");
+  src: url("../fonts/Lato/lato-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-bold.woff") format("woff"), url("../fonts/Lato/lato-bold.ttf") format("truetype"), url("../fonts/Lato/lato-bold.svg#latobold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "MontserratBold";
+  src: url("../fonts/Montserrat/montserrat-bold.eot");
+  src: url("../fonts/Montserrat/montserrat-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/montserrat-bold.woff") format("woff"), url("../fonts/Montserrat/montserrat-bold.ttf") format("truetype"), url("../fonts/Montserrat/montserrat-bold.svg#montserratbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("../fonts/Montserrat/montserrat-regular.eot");
+  src: url("../fonts/Montserrat/montserrat-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/montserrat-regular.woff") format("woff"), url("../fonts/Montserrat/montserrat-regular.ttf") format("truetype"), url("../fonts/Montserrat/montserrat-regular.svg#montserratregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*------------------------------------*    COMMON STYLES
+\*------------------------------------*/
+* {
+  box-sizing: border-box; }
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+.content-wrap, .header-container, section {
+  max-width: 1200px;
+  margin: 0 auto;
+  clear: both; }
+
+body {
+  background: #fff;
+  font-family: "LatoRegular", sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #acacac;
+  min-width: 320px; }
+
+p {
+  padding: 10px 0; }
+
+/*------------------------------------*    HEADER
+\*------------------------------------*/
+.header-wrap {
+  background: url("../images/header_bg.jpg") no-repeat center 0;
+  background-size: cover;
+  height: 680px;
+  position: relative; }
+
+header {
+  padding: 27px 0 26px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999; }
+  header.sticky {
+    background: #fad271; }
+
+.header-container {
+  position: relative;
+  padding-left: 234px; }
+
+.logo {
+  display: inline-block;
+  background: url("../images/logo.png") 0 0 no-repeat;
+  height: 26px;
+  width: 218px;
+  position: absolute;
+  top: 0;
+  left: 16px; }
+
+.top-nav {
+  padding-left: 16px; }
+  .top-nav li {
+    display: inline-block;
+    padding: 0 16px; }
+    .top-nav li a {
+      color: #fff;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-decoration: none; }
+      .top-nav li a:hover {
+        text-decoration: underline; }
+      .top-nav li a.active {
+        color: #fbd273;
+        font-weight: bold;
+        font-family: "LatoBlack", sans-serif; }
+
+.login-nav {
+  float: right; }
+  .login-nav li {
+    display: inline-block;
+    padding: 0 16px; }
+    .login-nav li a {
+      font-family: "LatoBold", sans-serif;
+      color: #fff;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-decoration: none; }
+      .login-nav li a:hover {
+        text-decoration: underline; }
+    .login-nav li .icon-hotel, .login-nav li .icon-traveler {
+      background: url("../images/icon-hotel.png") 0 0 no-repeat;
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      margin-right: 7px; }
+    .login-nav li .icon-traveler {
+      background: url("../images/icon-traveler.png") 0 0 no-repeat; }
+
+.sticky .logo {
+  background-position: 0 -26px; }
+
+.sticky .top-nav a {
+  color: #44474c; }
+  .sticky .top-nav a.active {
+    color: #44474c; }
+
+.sticky .login-nav li a {
+  color: #44474c; }
+
+.sticky .login-nav li .icon-hotel, .sticky .login-nav li .icon-traveler {
+  background-position: 0 -16px; }
+
+.sticky .login-nav li .icon-traveler {
+  background-position: 0 -16px; }
+
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-top: 40px;
+  text-align: center; }
+  .header-content h1 {
+    font-family: "MontserratBold", sans-serif;
+    font-size: 41px;
+    line-height: 39px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #fbd273;
+    padding-bottom: 10px; }
+  .header-content p {
+    font-family: "MontserratRegular", sans-serif;
+    font-size: 24px;
+    line-height: 39px;
+    color: #fff;
+    max-width: 450px;
+    margin: 0 auto; }
+  .header-content a {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #7bc5c4;
+    box-shadow: 2.5px 4.33px 5px 0 rgba(0, 0, 0, 0.35);
+    min-width: 259px;
+    height: 45px;
+    margin-top: 10px;
+    line-height: 45px;
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-family: "LatoBlack", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center; }
+    .header-content a:hover {
+      color: #44474c;
+      background-color: #fbd273; }
+
+/*------------------------------------*    SECTION
+\*------------------------------------*/
+section {
+  padding: 80px 0; }
+  section blockquote {
+    font-size: 24px;
+    font-family: "LatoRegular", sans-serif;
+    text-align: center; }
+    section blockquote strong {
+      color: #7bc5c4;
+      font-family: "LatoBlack", sans-serif; }
+
+.statbar-1 {
+  overflow: hidden; }
+  .statbar-1 li {
+    position: relative;
+    float: left;
+    width: 33.3%;
+    height: 275px;
+    padding-top: 60px;
+    background: #fbd273; }
+    .statbar-1 li h3 {
+      color: #fff;
+      font-family: "MontserratBold", sans-serif;
+      font-size: 108px;
+      line-height: .7;
+      max-width: 220px;
+      margin: auto; }
+    .statbar-1 li p {
+      color: #44474c;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: "LatoRegular", sans-serif;
+      max-width: 220px;
+      margin: auto;
+      padding: 20px 0 10px; }
+      .statbar-1 li p strong {
+        font-family: "LatoBlack", sans-serif; }
+    .statbar-1 li:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 59px;
+      height: 4px;
+      background: #fff;
+      border: 0;
+      left: calc((100% - 220px) / 2);
+      bottom: 40px; }
+  .statbar-1 .statbar-item-1 {
+    background: url("../images/statbar-item-1.jpg") 0 0 no-repeat; }
+  .statbar-1 .statbar-item-2 {
+    background: url("../images/statbar-item-2.jpg") 0 0 no-repeat; }
+  .statbar-1 .statbar-item-3 {
+    background: url("../images/statbar-item-3.jpg") 0 0 no-repeat; }
+    .statbar-1 .statbar-item-3 p {
+      color: #fbd273; }
