@@ -27,31 +27,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32616082" vertical-offset="2993" max-vertical-offset="3876">
-              <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9620536" vertical-offset="3065" max-vertical-offset="4097">
+              <caret line="231" column="5" selection-start-line="231" selection-start-column="5" selection-end-line="231" selection-end-column="5" />
               <folding>
-                <marker date="1436450651600" expanded="true" signature="880:1031" placeholder="..." />
-                <marker date="1436450651600" expanded="true" signature="973:999" placeholder="..." />
+                <marker date="1436451588355" expanded="true" signature="880:1031" placeholder="..." />
+                <marker date="1436451588355" expanded="true" signature="973:999" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8235292" vertical-offset="10039" max-vertical-offset="11067">
-              <caret line="611" column="20" selection-start-line="611" selection-start-column="20" selection-end-line="611" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tabulous.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/tabulous.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="3536">
-              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -63,7 +53,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/.tmp/scripts/1.js" />
         <option value="$PROJECT_DIR$/.tmp/scripts/main.js" />
         <option value="$PROJECT_DIR$/app/scripts/main.js" />
@@ -71,6 +60,7 @@
         <option value="$PROJECT_DIR$/app/scripts/js.js" />
         <option value="$PROJECT_DIR$/app/styles/tabulous.css" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
@@ -311,7 +301,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.807693" vertical-offset="6264" max-vertical-offset="7752">
+        <state vertical-scroll-proportion="0.31361607" vertical-offset="6264" max-vertical-offset="7752">
           <caret line="385" column="18" selection-start-line="385" selection-start-column="18" selection-end-line="385" selection-end-column="18" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -319,44 +309,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.tmp/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2618262" vertical-offset="238" max-vertical-offset="5304">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.tmp/scripts/main.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="881">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16594361" vertical-offset="0" max-vertical-offset="922">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.tmp/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07375271" vertical-offset="0" max-vertical-offset="922">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8235292" vertical-offset="10039" max-vertical-offset="11067">
+        <state vertical-scroll-proportion="0.4055944" vertical-offset="10039" max-vertical-offset="11067">
           <caret line="611" column="20" selection-start-line="611" selection-start-column="20" selection-end-line="611" selection-end-column="20" />
           <folding />
         </state>
@@ -364,19 +319,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/tabulous.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="3536">
+        <state vertical-scroll-proportion="0.018973215" vertical-offset="0" max-vertical-offset="3536">
           <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32616082" vertical-offset="2993" max-vertical-offset="3876">
-          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9620536" vertical-offset="3065" max-vertical-offset="4097">
+          <caret line="231" column="5" selection-start-line="231" selection-start-column="5" selection-end-line="231" selection-end-column="5" />
           <folding>
-            <marker date="1436450651600" expanded="true" signature="880:1031" placeholder="..." />
-            <marker date="1436450651600" expanded="true" signature="973:999" placeholder="..." />
+            <marker date="1436451588355" expanded="true" signature="880:1031" placeholder="..." />
+            <marker date="1436451588355" expanded="true" signature="973:999" placeholder="..." />
           </folding>
         </state>
       </provider>

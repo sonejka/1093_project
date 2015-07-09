@@ -217,6 +217,19 @@
 <script type="text/javascript" src="js.js"></script>
 <!-- endbuild -->
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="tabulous.js"></script>
+<script type="text/javascript" src="js.js"></script>
 
+<script>
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 1){
+      $('header').addClass("sticky");
+    }
+    else{
+      $('header').removeClass("sticky");
+    }
+  });
+</script>
 </body>
 </html>
