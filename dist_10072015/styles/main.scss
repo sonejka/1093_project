@@ -1,0 +1,870 @@
+/*------------------------------------*\
+    RESET STYLES
+\*------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*------------------------------------*\
+    VARIABLES
+\*------------------------------------*/
+//** Background color for `<body>`.
+$body-bg: #fff !default;
+//** Global text color on `<body>`.
+$text-color: #acacac !default;
+$image_dir: '../images/';
+
+$accent-color-1: #fbd273;
+//yellow
+$accent-color-2: #7bc5c4;
+//blue
+
+/*------------------------------------*\
+    MIXINS
+\*------------------------------------*/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//
+//@mixin transition($transition-property, $transition-time, $method) {
+//  -webkit-transition: $transition-property $transition-time $method;
+//  -moz-transition: $transition-property $transition-time $method;
+//  -ms-transition: $transition-property $transition-time $method;
+//  -o-transition: $transition-property $transition-time $method;
+//  transition: $transition-property $transition-time $method;
+//}
+//
+//@mixin opacity($opacity) {
+//  opacity: $opacity;
+//  $opacity-ie: $opacity * 100;
+//  filter: alpha(opacity=$opacity-ie); //IE8
+//}
+//
+//@mixin transform($transforms) {
+//  -moz-transform: $transforms;
+//  -o-transform: $transforms;
+//  -ms-transform: $transforms;
+//  -webkit-transform: $transforms;
+//  transform: $transforms;
+//}
+//
+//// rotate
+//@mixin rotate($deg) {
+//  @include transform(rotate(#{$deg}deg));
+//}
+//
+//// scale
+//@mixin scale($scale) {
+//  @include transform(scale($scale));
+//}
+//
+//// translate
+//@mixin translate($x, $y) {
+//  @include transform(translate($x, $y));
+//}
+//
+//// skew
+//@mixin skew($x, $y) {
+//  @include transform(skew(#{$x}deg, #{$y}deg));
+//}
+//
+////transform origin
+//@mixin transform-origin($origin) {
+//  moz-transform-origin: $origin;
+//  -o-transform-origin: $origin;
+//  -ms-transform-origin: $origin;
+//  -webkit-transform-origin: $origin;
+//  transform-origin: $origin;
+//}
+
+/*------------------------------------*\
+    FONT-FACE
+\*------------------------------------*/
+
+@font-face {
+  font-family: "LatoRegular";
+  src: url('../fonts/Lato/lato-regular.eot');
+  src: url('../fonts/Lato/lato-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Lato/lato-regular.woff') format('woff'),
+  url('../fonts/Lato/lato-regular.ttf') format('truetype'),
+  url('../fonts/Lato/lato-regular.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LatoBlack";
+  src: url('../fonts/Lato/lato-black.eot');
+  src: url('../fonts/Lato/lato-black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Lato/lato-black.woff') format('woff'),
+  url('../fonts/Lato/lato-black.ttf') format('truetype'),
+  url('../fonts/Lato/lato-black.svg#latoblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LatoBold";
+  src: url('../fonts/Lato/lato-bold.eot');
+  src: url('../fonts/Lato/lato-bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Lato/lato-bold.woff') format('woff'),
+  url('../fonts/Lato/lato-bold.ttf') format('truetype'),
+  url('../fonts/Lato/lato-bold.svg#latobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: url('../fonts/Montserrat/montserrat-bold.eot');
+  src: url('../fonts/Montserrat/montserrat-bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Montserrat/montserrat-bold.woff') format('woff'),
+  url('../fonts/Montserrat/montserrat-bold.ttf') format('truetype'),
+  url('../fonts/Montserrat/montserrat-bold.svg#montserratbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: url('../fonts/Montserrat/montserrat-regular.eot');
+  src: url('../fonts/Montserrat/montserrat-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Montserrat/montserrat-regular.woff') format('woff'),
+  url('../fonts/Montserrat/montserrat-regular.ttf') format('truetype'),
+  url('../fonts/Montserrat/montserrat-regular.svg#montserratregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------------------*\
+    COMMON STYLES
+\*------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  background: $body-bg;
+  font-family: "LatoRegular", sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  color: $text-color;
+  min-width: 320px;
+}
+
+p {
+  padding: 10px 0;
+}
+
+.content-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  clear: both;
+}
+
+.flex {
+  -webkit-flex-flow: wrap row;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+.header-wrap {
+  background: url($image_dir + "header_bg.jpg") no-repeat center 0;
+  background-size: cover;
+  height: 680px;
+  position: relative;
+}
+
+header {
+  padding: 27px 0 26px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.6s ease;
+  height: 90px;
+  &.sticky {
+    background: #fad271;
+    height: 79px;
+  }
+}
+
+.header-container {
+  @extend .content-wrap;
+  position: relative;
+  padding-left: 234px;
+}
+
+.logo {
+  display: inline-block;
+  background: url($image_dir + "logo.png") 0 0 no-repeat;
+  height: 26px;
+  width: 218px;
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.top-nav {
+  padding-left: 16px;
+  li {
+    display: inline-block;
+    padding: 0 16px;
+    a {
+      color: #fff;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+      &.active {
+        color: $accent-color-1;
+        font-weight: bold;
+        font-family: "LatoBlack", sans-serif;
+      }
+    }
+  }
+}
+
+.login-nav {
+  float: right;
+  li {
+    display: inline-block;
+    padding: 0 16px;
+    a {
+      font-family: "LatoBold", sans-serif;
+      color: #fff;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .icon-hotel {
+      background: url($image_dir + "icon-hotel.png") 0 0 no-repeat;
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      margin-right: 7px;
+    }
+    .icon-traveler {
+      @extend .icon-hotel;
+      background: url($image_dir + "icon-traveler.png") 0 0 no-repeat;
+    }
+  }
+}
+
+.sticky {
+  .logo {
+    background-position: 0 -26px;
+  }
+  .top-nav a {
+    color: #44474c;
+    &.active {
+      color: #44474c;
+    }
+  }
+  .login-nav {
+    li {
+      a {
+        color: #44474c;
+      }
+      .icon-hotel {
+        background-position: 0 -16px;
+
+      }
+      .icon-traveler {
+        background-position: 0 -16px;
+      }
+    }
+  }
+}
+
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+  text-align: center;
+  h1 {
+    font-family: "MontserratBold", sans-serif;
+    font-size: 41px;
+    line-height: 39px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: $accent-color-1;
+    padding-bottom: 10px;
+  }
+  p {
+    font-family: "MontserratRegular", sans-serif;
+    font-size: 24px;
+    line-height: 39px;
+    color: #fff;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  a {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: $accent-color-2;
+    box-shadow: 2.5px 4.33px 5px 0 rgba(0, 0, 0, 0.35);
+    min-width: 259px;
+    height: 45px;
+    margin-top: 10px;
+    line-height: 45px;
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-family: "LatoBlack", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    &:hover {
+      color: #44474c;
+      background-color: $accent-color-1;
+    }
+  }
+}
+
+/*------------------------------------*\
+    SECTION
+\*------------------------------------*/
+
+section {
+  @extend .content-wrap;
+  padding: 80px 0;
+  blockquote {
+    font-size: 24px;
+    font-family: "LatoRegular", sans-serif;
+    text-align: center;
+    strong {
+      color: $accent-color-2;
+      font-family: "LatoBlack", sans-serif;
+    }
+  }
+
+  > h2 {
+    font-family: "MontserratBold", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: $accent-color-2;
+  }
+  > p {
+    font-size: 21px;
+    text-align: center;
+    font-family: "LatoRegular", sans-serif;
+  }
+}
+
+/*------------------------------------*\
+    STATBAR-1
+\*------------------------------------*/
+
+.statbar-1 {
+  overflow: hidden;
+  li {
+    position: relative;
+    float: left;
+    width: 33.3%;
+    .statbar-item-wrap {
+      height: 275px;
+      padding-top: 60px;
+    }
+    h3 {
+      color: #fff;
+      font-family: "MontserratBold", sans-serif;
+      font-size: 108px;
+      line-height: .7;
+      max-width: 220px;
+      margin: auto;
+    }
+    p {
+      color: #44474c;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: "LatoRegular", sans-serif;
+      max-width: 220px;
+      margin: auto;
+      padding: 20px 0 10px;
+      strong {
+        font-family: "LatoBlack", sans-serif;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 59px;
+      height: 4px;
+      background: #fff;
+      border: 0;
+      left: calc((100% - 220px) / 2);
+      bottom: 40px;
+    }
+
+    &:hover .statbar-item-wrap {
+      background-color: rgba(0, 0, 0, 0.6);
+      cursor: default;
+    }
+
+    &:hover .statbar-item-wrap p {
+      color: $accent-color-1;
+    }
+  }
+
+  .statbar-item-1 {
+    background: url($image_dir + "statbar-item-1.jpg") 0 0 no-repeat;
+    background-size: cover;
+  }
+  .statbar-item-2 {
+    background: url($image_dir + "statbar-item-2.jpg") 0 0 no-repeat;
+    background-size: cover;
+  }
+  .statbar-item-3 {
+    background: url($image_dir + "statbar-item-3.jpg") 0 0 no-repeat;
+    background-size: cover;
+    p {
+      color: $accent-color-1;
+    }
+  }
+}
+
+/*------------------------------------*\
+    DEVICES-PIC
+\*------------------------------------*/
+
+.create-guide {
+  text-align: center;
+  h2 {
+    padding-bottom: 20px;
+  }
+  p {
+    width: 60%;
+    margin: auto;
+    line-height: 1.66;
+  }
+}
+
+.devices-pic {
+  background: url($image_dir + "devices.jpg") center no-repeat;
+  height: 571px;
+  margin-top: 80px;
+  background-size: 80%;
+}
+
+/*------------------------------------*\
+    STEP-1
+\*------------------------------------*/
+
+.step-1, .step-2, .step-3 {
+  padding-top: 0;
+  h2 {
+    color: #b7b7b7;
+    strong {
+      color: $accent-color-1;
+    }
+  }
+}
+
+.step-1-list {
+  padding: 60px 0 0;
+  overflow: hidden;
+  text-align: center;
+  li {
+    display: inline-block;
+    position: relative;
+    width: 19.8%;
+    min-width: 180px;
+    padding: 0 20px 20px 20px;
+    vertical-align: top;
+    p {
+      font-family: "MontserratBold", sans-serif;
+      font-size: 18px;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      background: url($image_dir + "icon-arrow.png") 0 0 no-repeat;
+      height: 23px;
+      width: 19px;
+      right: -10px;
+      top: 35px;
+    }
+    &:last-child:after {
+      display: none;
+    }
+
+    &:nth-child(odd) p {
+      color: $accent-color-2;
+    }
+    &:nth-child(even) p {
+      color: $accent-color-1;
+    }
+  }
+}
+
+i[class*="step-icon-"] {
+  display: inline-block;
+  height: 108px;
+  background: transparent no-repeat center;
+  background-size: contain;
+}
+
+i.step-icon-1 {
+  background-image: url($image_dir + "icon-access.svg");
+  width: 116px;
+}
+
+i.step-icon-2 {
+  background-image: url($image_dir + "icon-activities.svg");
+  width: 124px;
+}
+
+i.step-icon-3 {
+  background-image: url($image_dir + "icon-branding.svg");
+  width: 95px;
+}
+
+i.step-icon-4 {
+  background-image: url($image_dir + "icon-guide.svg");
+  width: 108px;
+}
+
+i.step-icon-5 {
+  background-image: url($image_dir + "icon-story.svg");
+  width: 70px;
+}
+
+i.step-icon-6 {
+  background-image: url($image_dir + "icon-profile-bw.svg");
+  width: 90px;
+}
+
+i.step-icon-7 {
+  background-image: url($image_dir + "icon-responsive-bw.svg");
+  width: 64px;
+}
+
+i.step-icon-8 {
+  background-image: url($image_dir + "icon-multitouch-bw.svg");
+  width: 130px;
+}
+
+i.step-icon-9 {
+  background-image: url($image_dir + "icon-sharing-bw.svg");
+  width: 108px;
+}
+
+i.step-icon-10 {
+  background-image: url($image_dir + "icon-perscontent-bw.svg");
+  width: 116px;
+}
+
+/*------------------------------------*\
+    STEP-2
+\*------------------------------------*/
+.step-2-wrap {
+  background: #f3f5f9;
+  max-width: none;
+}
+
+.step-2 {
+  padding: 80px 0 0;
+  max-width: none;
+  h2 strong {
+    color: $accent-color-2;
+  }
+  .tabs_container {
+    position: relative;
+    > div {
+      display: table-row;
+      h3 {
+        font-family: "MontserratBold", sans-serif;
+        font-size: 36px;
+        display: table-cell;
+        vertical-align: top;
+        padding-right: 40px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        padding: 5px 0;
+        display: table-cell;
+        vertical-align: top;
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 45px;
+      position: absolute;
+      background: url($image_dir + "tabs-content-shadow.png") center repeat;
+      top: -45px;
+      left: 0;
+    }
+  }
+
+  .tabs {
+    display: table;
+  }
+  .tabs li {
+    position: relative;
+    display: table-cell;
+    float: none !important;
+    a {
+      font-family: "LatoRegular", sans-serif;
+      font-size: 18px;
+      display: inline-block;
+      min-height: 120px;
+      text-align: center;
+
+      p {
+        font-family: "MontserratBold", sans-serif;
+      }
+
+      &.tabulous_active:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url($image_dir + "tab-arrow.png") center no-repeat;
+        height: 68px;
+        width: 103px;
+      }
+
+      &.tabulous_active {
+
+        i.step-icon-6 {
+          background-image: url($image_dir + "icon-profile.svg");
+        }
+
+        i.step-icon-7 {
+          background-image: url($image_dir + "icon-responsive.svg");
+        }
+
+        i.step-icon-8 {
+          background-image: url($image_dir + "icon-multitouch.svg");
+        }
+
+        i.step-icon-9 {
+          background-image: url($image_dir + "icon-sharing.svg");
+        }
+
+        i.step-icon-10 {
+          background-image: url($image_dir + "icon-perscontent.svg");
+        }
+
+      }
+    }
+  }
+
+}
+
+/*------------------------------------*\
+    STEP-3
+\*------------------------------------*/
+
+.step-3 {
+  padding: 80px 0;
+}
+
+//.screen-pic {
+//  background: url($image_dir + "screen-pic.jpg") center no-repeat;
+//  height: 658px;
+//  max-width: 1182px;
+//  background-size: contain;
+//}
+
+.preferences-list {
+  background: url($image_dir + "screen-pic.jpg") center 180px no-repeat;
+  height: 958px;
+  padding: 300px 0 0;
+  max-width: 1182px;
+  background-size: contain;
+  position: relative;
+  li[class*="preference-"] {
+    position: absolute;
+    text-align: center;
+    width: 33%;
+    max-width: 320px;
+    p {
+      font-family: "LatoRegular", sans-serif;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    a.number {
+      @include border-radius(50%);
+      background: $accent-color-2;
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+      display: inline-block;
+      color: #fff;
+      font-family: "LatoBlack", sans-serif;
+      font-size: 21px;
+    }
+    h4 {
+      padding: 15px 0 0;
+      color: $accent-color-2;
+      font-family: "LatoBlack", sans-serif;
+      font-size: 21px;
+    }
+    &:nth-child(odd) {
+      a.number {
+        background: $accent-color-1;
+      }
+      h4 {
+        color: $accent-color-1;;
+      }
+    }
+  }
+  .preference-1 {
+    top: 150px;
+    left: 5%;
+  }
+  .preference-2 {
+    top: 50px;
+    left: 33%;
+  }
+  .preference-3 {
+    top: 100px;
+    left: 66%;
+  }
+  .preference-4 {
+    top: 670px;
+    left: 0;
+  }
+  .preference-5 {
+    top: 630px;
+    left: 64%;
+  }
+
+  li[class*="drop-pin-"] {
+    position: absolute;
+    width: 145px;
+    height: 127px;
+    display: block;
+    background-image: url($image_dir + "drop-pin-yellow.png");
+    padding: 30px 75px 0 0;
+    text-align: center;
+    color: #fff;
+    font-family: "LatoBlack", sans-serif;
+    font-size: 21px;
+
+    &:nth-child(odd) {
+      background-image: url($image_dir + "drop-pin-blue.png");
+    }
+  }
+
+  .drop-pin-1 {
+    top: 350px;
+    left: 35%;
+  }
+  .drop-pin-2 {
+    top: 220px;
+    left: 50%;
+  }
+  .drop-pin-3 {
+    top: 400px;
+    left: 70%;
+  }
+  .drop-pin-4 {
+    top: 530px;
+    left: 30%;
+  }
+  .drop-pin-5 {
+    top: 550px;
+    left: 52%;
+  }
+
+}
+
+/*------------------------------------*\
+    STEP-4
+\*------------------------------------*/
+
+.step-4-wrap {
+  @extend .step-2-wrap;
+}
+
+.step-4 {
+  @extend .step-2;
+}
