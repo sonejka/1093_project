@@ -71,12 +71,13 @@ $accent-color-2: #7bc5c4;
     MIXINS
 \*------------------------------------*/
 
-//@mixin border-radius($radius) {
-//  -webkit-border-radius: $radius;
-//  -moz-border-radius: $radius;
-//  -ms-border-radius: $radius;
-//  border-radius: $radius;
-//}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
 //
 //@mixin transition($transition-property, $transition-time, $method) {
 //  -webkit-transition: $transition-property $transition-time $method;
@@ -249,8 +250,11 @@ header {
   position: fixed;
   width: 100%;
   z-index: 9999;
+  transition: all 0.6s ease;
+  height: 90px;
   &.sticky {
     background: #fad271;
+    height: 79px;
   }
 }
 
@@ -429,7 +433,6 @@ section {
 \*------------------------------------*/
 
 .statbar-1 {
-  @extend .content-wrap;
   overflow: hidden;
   li {
     position: relative;
@@ -483,12 +486,15 @@ section {
 
   .statbar-item-1 {
     background: url($image_dir + "statbar-item-1.jpg") 0 0 no-repeat;
+    background-size: cover;
   }
   .statbar-item-2 {
     background: url($image_dir + "statbar-item-2.jpg") 0 0 no-repeat;
+    background-size: cover;
   }
   .statbar-item-3 {
     background: url($image_dir + "statbar-item-3.jpg") 0 0 no-repeat;
+    background-size: cover;
     p {
       color: $accent-color-1;
     }
@@ -499,10 +505,23 @@ section {
     DEVICES-PIC
 \*------------------------------------*/
 
+.create-guide {
+  text-align: center;
+  h2 {
+    padding-bottom: 20px;
+  }
+  p {
+    width: 60%;
+    margin: auto;
+    line-height: 1.66;
+  }
+}
+
 .devices-pic {
   background: url($image_dir + "devices.jpg") center no-repeat;
   height: 571px;
   margin-top: 80px;
+  background-size: 80%;
 }
 
 /*------------------------------------*\
@@ -589,6 +608,31 @@ i.step-icon-5 {
   width: 70px;
 }
 
+i.step-icon-6 {
+  background-image: url($image_dir + "icon-profile-bw.svg");
+  width: 90px;
+}
+
+i.step-icon-7 {
+  background-image: url($image_dir + "icon-responsive-bw.svg");
+  width: 64px;
+}
+
+i.step-icon-8 {
+  background-image: url($image_dir + "icon-multitouch-bw.svg");
+  width: 130px;
+}
+
+i.step-icon-9 {
+  background-image: url($image_dir + "icon-sharing-bw.svg");
+  width: 108px;
+}
+
+i.step-icon-10 {
+  background-image: url($image_dir + "icon-perscontent-bw.svg");
+  width: 116px;
+}
+
 /*------------------------------------*\
     STEP-2
 \*------------------------------------*/
@@ -603,26 +647,90 @@ i.step-icon-5 {
   h2 strong {
     color: $accent-color-2;
   }
+  .tabs_container {
+    position: relative;
+    > div {
+      display: table-row;
+      h3 {
+        font-family: "MontserratBold", sans-serif;
+        font-size: 36px;
+        display: table-cell;
+        vertical-align: top;
+        padding-right: 40px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        padding: 5px 0;
+        display: table-cell;
+        vertical-align: top;
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 45px;
+      position: absolute;
+      background: url($image_dir + "tabs-content-shadow.png") center repeat;
+      top: -45px;
+      left: 0;
+    }
+  }
 
+  .tabs {
+    display: table;
+  }
   .tabs li {
+    position: relative;
+    display: table-cell;
+    float: none !important;
     a {
       font-family: "LatoRegular", sans-serif;
       font-size: 18px;
       display: inline-block;
       min-height: 120px;
-      position: relative;
       text-align: center;
+
+      p {
+        font-family: "MontserratBold", sans-serif;
+      }
 
       &.tabulous_active:after {
         content: '';
         display: inline-block;
         position: absolute;
+        z-index: 1;
         bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
         background: url($image_dir + "tab-arrow.png") center no-repeat;
         height: 68px;
         width: 103px;
+      }
+
+      &.tabulous_active {
+
+        i.step-icon-6 {
+          background-image: url($image_dir + "icon-profile.svg");
+        }
+
+        i.step-icon-7 {
+          background-image: url($image_dir + "icon-responsive.svg");
+        }
+
+        i.step-icon-8 {
+          background-image: url($image_dir + "icon-multitouch.svg");
+        }
+
+        i.step-icon-9 {
+          background-image: url($image_dir + "icon-sharing.svg");
+        }
+
+        i.step-icon-10 {
+          background-image: url($image_dir + "icon-perscontent.svg");
+        }
+
       }
     }
   }
@@ -637,9 +745,126 @@ i.step-icon-5 {
   padding: 80px 0;
 }
 
-.screen-pic {
-  background: url($image_dir + "screen-pic.jpg") center no-repeat;
-  height: 658px;
+//.screen-pic {
+//  background: url($image_dir + "screen-pic.jpg") center no-repeat;
+//  height: 658px;
+//  max-width: 1182px;
+//  background-size: contain;
+//}
+
+.preferences-list {
+  background: url($image_dir + "screen-pic.jpg") center 180px no-repeat;
+  height: 958px;
+  padding: 300px 0 0;
   max-width: 1182px;
   background-size: contain;
+  position: relative;
+  li[class*="preference-"] {
+    position: absolute;
+    text-align: center;
+    width: 33%;
+    max-width: 320px;
+    p {
+      font-family: "LatoRegular", sans-serif;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    a.number {
+      @include border-radius(50%);
+      background: $accent-color-2;
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+      display: inline-block;
+      color: #fff;
+      font-family: "LatoBlack", sans-serif;
+      font-size: 21px;
+    }
+    h4 {
+      padding: 15px 0 0;
+      color: $accent-color-2;
+      font-family: "LatoBlack", sans-serif;
+      font-size: 21px;
+    }
+    &:nth-child(odd) {
+      a.number {
+        background: $accent-color-1;
+      }
+      h4 {
+        color: $accent-color-1;;
+      }
+    }
+  }
+  .preference-1 {
+    top: 150px;
+    left: 5%;
+  }
+  .preference-2 {
+    top: 50px;
+    left: 33%;
+  }
+  .preference-3 {
+    top: 100px;
+    left: 66%;
+  }
+  .preference-4 {
+    top: 670px;
+    left: 0;
+  }
+  .preference-5 {
+    top: 630px;
+    left: 64%;
+  }
+
+  li[class*="drop-pin-"] {
+    position: absolute;
+    width: 145px;
+    height: 127px;
+    display: block;
+    background-image: url($image_dir + "drop-pin-yellow.png");
+    padding: 30px 75px 0 0;
+    text-align: center;
+    color: #fff;
+    font-family: "LatoBlack", sans-serif;
+    font-size: 21px;
+
+    &:nth-child(odd) {
+      background-image: url($image_dir + "drop-pin-blue.png");
+    }
+  }
+
+  .drop-pin-1 {
+    top: 350px;
+    left: 35%;
+  }
+  .drop-pin-2 {
+    top: 220px;
+    left: 50%;
+  }
+  .drop-pin-3 {
+    top: 400px;
+    left: 70%;
+  }
+  .drop-pin-4 {
+    top: 530px;
+    left: 30%;
+  }
+  .drop-pin-5 {
+    top: 550px;
+    left: 52%;
+  }
+
+}
+
+/*------------------------------------*\
+    STEP-4
+\*------------------------------------*/
+
+.step-4-wrap {
+  @extend .step-2-wrap;
+}
+
+.step-4 {
+  @extend .step-2;
 }

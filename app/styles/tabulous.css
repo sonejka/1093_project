@@ -14,7 +14,7 @@
 
 #tabs li a,#tabs2 li a,#tabs3 li a,#tabs4 li a,#tabs5 li a {
 	display: block;
-	padding: 17px 30px;
+	padding: 17px 10px 70px 10px;
 	/*background: #544f6b;*/
 	text-decoration: none;
 	color: #b7b7b7;
@@ -27,7 +27,7 @@
 
 #tabs_container {
 	padding: 40px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 	background: #7bc5c4;
   min-height: 235px;
