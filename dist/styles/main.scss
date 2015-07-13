@@ -134,60 +134,60 @@ $accent-color-2: #7bc5c4;
     FONT-FACE
 \*------------------------------------*/
 
-@font-face {
-  font-family: "LatoRegular";
-  src: url('../fonts/Lato/lato-regular.eot');
-  src: url('../fonts/Lato/lato-regular.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Lato/lato-regular.woff') format('woff'),
-  url('../fonts/Lato/lato-regular.ttf') format('truetype'),
-  url('../fonts/Lato/lato-regular.svg#latoregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+//@font-face {
+//  font-family: "LatoRegular";
+//  src: url('../fonts/Lato/lato-regular.eot');
+//  src: url('../fonts/Lato/lato-regular.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/Lato/lato-regular.woff') format('woff'),
+//  url('../fonts/Lato/lato-regular.ttf') format('truetype'),
+//  url('../fonts/Lato/lato-regular.svg#latoregular') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: "LatoBlack";
+//  src: url('../fonts/Lato/lato-black.eot');
+//  src: url('../fonts/Lato/lato-black.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/Lato/lato-black.woff') format('woff'),
+//  url('../fonts/Lato/lato-black.ttf') format('truetype'),
+//  url('../fonts/Lato/lato-black.svg#latoblack') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: "LatoBold";
+//  src: url('../fonts/Lato/lato-bold.eot');
+//  src: url('../fonts/Lato/lato-bold.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/Lato/lato-bold.woff') format('woff'),
+//  url('../fonts/Lato/lato-bold.ttf') format('truetype'),
+//  url('../fonts/Lato/lato-bold.svg#latobold') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
 
-@font-face {
-  font-family: "LatoBlack";
-  src: url('../fonts/Lato/lato-black.eot');
-  src: url('../fonts/Lato/lato-black.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Lato/lato-black.woff') format('woff'),
-  url('../fonts/Lato/lato-black.ttf') format('truetype'),
-  url('../fonts/Lato/lato-black.svg#latoblack') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "LatoBold";
-  src: url('../fonts/Lato/lato-bold.eot');
-  src: url('../fonts/Lato/lato-bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Lato/lato-bold.woff') format('woff'),
-  url('../fonts/Lato/lato-bold.ttf') format('truetype'),
-  url('../fonts/Lato/lato-bold.svg#latobold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MontserratBold";
-  src: url('../fonts/Montserrat/montserrat-bold.eot');
-  src: url('../fonts/Montserrat/montserrat-bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Montserrat/montserrat-bold.woff') format('woff'),
-  url('../fonts/Montserrat/montserrat-bold.ttf') format('truetype'),
-  url('../fonts/Montserrat/montserrat-bold.svg#montserratbold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MontserratRegular";
-  src: url('../fonts/Montserrat/montserrat-regular.eot');
-  src: url('../fonts/Montserrat/montserrat-regular.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Montserrat/montserrat-regular.woff') format('woff'),
-  url('../fonts/Montserrat/montserrat-regular.ttf') format('truetype'),
-  url('../fonts/Montserrat/montserrat-regular.svg#montserratregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+//@font-face {
+//  font-family: "MontserratBold";
+//  src: url('../fonts/Montserrat/montserrat-bold.eot');
+//  src: url('../fonts/Montserrat/montserrat-bold.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/Montserrat/montserrat-bold.woff') format('woff'),
+//  url('../fonts/Montserrat/montserrat-bold.ttf') format('truetype'),
+//  url('../fonts/Montserrat/montserrat-bold.svg#montserratbold') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: "MontserratRegular";
+//  src: url('../fonts/Montserrat/montserrat-regular.eot');
+//  src: url('../fonts/Montserrat/montserrat-regular.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/Montserrat/montserrat-regular.woff') format('woff'),
+//  url('../fonts/Montserrat/montserrat-regular.ttf') format('truetype'),
+//  url('../fonts/Montserrat/montserrat-regular.svg#montserratregular') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
 
 /*------------------------------------*\
     COMMON STYLES
@@ -207,7 +207,7 @@ $accent-color-2: #7bc5c4;
 
 body {
   background: $body-bg;
-  font-family: "LatoRegular", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 12px;
   line-height: 1.2;
   color: $text-color;
@@ -289,8 +289,8 @@ header {
       }
       &.active {
         color: $accent-color-1;
-        font-weight: bold;
-        font-family: "LatoBlack", sans-serif;
+        font-weight: 900;
+        font-family: "Lato", sans-serif;
       }
     }
   }
@@ -302,7 +302,9 @@ header {
     display: inline-block;
     padding: 0 16px;
     a {
-      font-family: "LatoBold", sans-serif;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
       color: #fff;
       line-height: 26px;
       text-transform: uppercase;
@@ -317,6 +319,7 @@ header {
       height: 16px;
       width: 16px;
       margin-right: 7px;
+      vertical-align: text-top;
     }
     .icon-traveler {
       @extend .icon-hotel;
@@ -359,7 +362,8 @@ header {
   margin-top: 40px;
   text-align: center;
   h1 {
-    font-family: "MontserratBold", sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 41px;
     line-height: 39px;
     letter-spacing: 5px;
@@ -368,33 +372,35 @@ header {
     padding-bottom: 10px;
   }
   p {
-    font-family: "MontserratRegular", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     line-height: 39px;
     color: #fff;
     max-width: 450px;
     margin: 0 auto;
   }
-  a {
-    display: inline-block;
-    border-radius: 5px;
-    background-color: $accent-color-2;
-    box-shadow: 2.5px 4.33px 5px 0 rgba(0, 0, 0, 0.35);
-    min-width: 259px;
-    height: 45px;
-    margin-top: 10px;
-    line-height: 45px;
-    font-size: 16px;
-    letter-spacing: 4px;
-    font-family: "LatoBlack", sans-serif;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    &:hover {
-      color: #44474c;
-      background-color: $accent-color-1;
-    }
+}
+
+.request-info-btn {
+  display: inline-block;
+  @include border-radius(5px);
+  background-color: $accent-color-2;
+  box-shadow: 2.5px 4.33px 5px 0 rgba(0, 0, 0, 0.35);
+  min-width: 259px;
+  height: 45px;
+  margin-top: 10px;
+  line-height: 45px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  &:hover {
+    color: #44474c;
+    background-color: $accent-color-1;
   }
 }
 
@@ -407,16 +413,18 @@ section {
   padding: 80px 0;
   blockquote {
     font-size: 24px;
-    font-family: "LatoRegular", sans-serif;
+    font-family: 'Lato', sans-serif;
     text-align: center;
     strong {
       color: $accent-color-2;
-      font-family: "LatoBlack", sans-serif;
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
     }
   }
 
   > h2 {
-    font-family: "MontserratBold", sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 36px;
     text-align: center;
     color: $accent-color-2;
@@ -424,7 +432,7 @@ section {
   > p {
     font-size: 21px;
     text-align: center;
-    font-family: "LatoRegular", sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 }
 
@@ -444,7 +452,8 @@ section {
     }
     h3 {
       color: #fff;
-      font-family: "MontserratBold", sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       font-size: 108px;
       line-height: .7;
       max-width: 220px;
@@ -454,12 +463,13 @@ section {
       color: #44474c;
       font-size: 14px;
       line-height: 1.5;
-      font-family: "LatoRegular", sans-serif;
+      font-family: 'Lato', sans-serif;
       max-width: 220px;
       margin: auto;
       padding: 20px 0 10px;
       strong {
-        font-family: "LatoBlack", sans-serif;
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
       }
     }
     &:after {
@@ -508,7 +518,7 @@ section {
 .create-guide {
   text-align: center;
   h2 {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   p {
     width: 60%;
@@ -519,16 +529,16 @@ section {
 
 .devices-pic {
   background: url($image_dir + "devices.jpg") center no-repeat;
-  height: 571px;
-  margin-top: 80px;
-  background-size: 80%;
+  height: 400px;
+  margin-top: 20px;
+  background-size: contain;
 }
 
 /*------------------------------------*\
     STEP-1
 \*------------------------------------*/
 
-.step-1, .step-2, .step-3 {
+.step-1, .step-2, .step-3, .step-5 {
   padding-top: 0;
   h2 {
     color: #b7b7b7;
@@ -550,7 +560,8 @@ section {
     padding: 0 20px 20px 20px;
     vertical-align: top;
     p {
-      font-family: "MontserratBold", sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       font-size: 18px;
     }
     &:after {
@@ -652,7 +663,8 @@ i.step-icon-10 {
     > div {
       display: table-row;
       h3 {
-        font-family: "MontserratBold", sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
         font-size: 36px;
         display: table-cell;
         vertical-align: top;
@@ -686,14 +698,15 @@ i.step-icon-10 {
     display: table-cell;
     float: none !important;
     a {
-      font-family: "LatoRegular", sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 18px;
       display: inline-block;
       min-height: 120px;
       text-align: center;
 
       p {
-        font-family: "MontserratBold", sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
       }
 
       &.tabulous_active:after {
@@ -742,15 +755,8 @@ i.step-icon-10 {
 \*------------------------------------*/
 
 .step-3 {
-  padding: 80px 0;
+  padding: 80px 0 0;
 }
-
-//.screen-pic {
-//  background: url($image_dir + "screen-pic.jpg") center no-repeat;
-//  height: 658px;
-//  max-width: 1182px;
-//  background-size: contain;
-//}
 
 .preferences-list {
   background: url($image_dir + "screen-pic.jpg") center 180px no-repeat;
@@ -765,7 +771,7 @@ i.step-icon-10 {
     width: 33%;
     max-width: 320px;
     p {
-      font-family: "LatoRegular", sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 14px;
       line-height: 1.9;
     }
@@ -778,13 +784,15 @@ i.step-icon-10 {
       text-align: center;
       display: inline-block;
       color: #fff;
-      font-family: "LatoBlack", sans-serif;
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
       font-size: 21px;
     }
     h4 {
       padding: 15px 0 0;
       color: $accent-color-2;
-      font-family: "LatoBlack", sans-serif;
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
       font-size: 21px;
     }
     &:nth-child(odd) {
@@ -826,7 +834,7 @@ i.step-icon-10 {
     padding: 30px 75px 0 0;
     text-align: center;
     color: #fff;
-    font-family: "LatoBlack", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 21px;
 
     &:nth-child(odd) {
@@ -867,4 +875,154 @@ i.step-icon-10 {
 
 .step-4 {
   @extend .step-2;
+  max-width: 1200px;
+  overflow: hidden;
+  padding-bottom: 80px;
+  h2 {
+    margin-bottom: 60px;
+  }
+  .publish-guide {
+    display: table-cell;
+    width: 60%;
+    height: 390px;
+//    background: url($image_dir + "circle.png") center no-repeat;
+  }
+  .publish-desc {
+    display: table-cell;
+    width: 40%;
+    vertical-align: middle;
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: $accent-color-2;
+      padding-bottom: 10px;
+    }
+    p {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+}
+
+/*------------------------------------*\
+    STEP-5
+\*------------------------------------*/
+
+.step-5 {
+  padding: 80px 0 0;
+}
+
+/*------------------------------------*\
+    SIGN UP
+\*------------------------------------*/
+
+.sign-up-bg {
+  background: #333 url($image_dir + "signup-bg.jpg") center 0 no-repeat;
+  background-size: cover;
+  height: 500px;
+  padding-top: 228px;
+}
+
+.sign-up-wrap {
+//  background: url($image_dir + "signup-text-bg.png") center 0 repeat-x;
+  background: rgba(255,255,255, .17);
+  height: 272px;
+  text-align: center;
+}
+
+.sign-up {
+  padding: 0;
+  h3 {
+    font-size: 48px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #fff;
+    padding: 30px 0;
+    margin: auto;
+  }
+}
+
+.signup-form {
+  display: table;
+  margin: auto;
+}
+
+.email-field {
+  display: table-cell;
+  @include border-radius(6px 0 0 6px);
+  border: 0;
+  background-color: #fff;
+  padding: 0 20px;
+  width: 296px;
+  height: 45px;
+  vertical-align: top;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.email-submit {
+  display: table-cell;
+  @extend .request-info-btn;
+  @include border-radius(0 6px 6px 0);
+  border: 0;
+  height: 45px;
+  vertical-align: top;
+  margin: 0;
+  cursor: pointer;
+}
+
+/*------------------------------------*\
+    FOOTER
+\*------------------------------------*/
+footer {
+  background: #fbd273 url($image_dir + "footer-shadow.png") 0 0 repeat-x;
+  height: 283px;
+  padding-top: 90px;
+  color: #44474c;
+  .copyright {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    word-spacing: 2px;
+    letter-spacing: .5px;
+  }
+}
+
+.social-icons {
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    a {
+      color: #44474c;
+      font-family: "FontAwesome", sans-serif;
+      font-size: 18px;
+    }
+  }
+}
+
+.footer-nav {
+  padding: 30px 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #44474c;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
