@@ -262,6 +262,11 @@ header {
   @extend .content-wrap;
   position: relative;
   padding-left: 234px;
+  text-align: right;
+}
+
+.menu-btn {
+  display: none;
 }
 
 .logo {
@@ -276,6 +281,7 @@ header {
 
 .top-nav {
   padding-left: 16px;
+  float: left;
   li {
     display: inline-block;
     padding: 0 16px;
@@ -287,17 +293,16 @@ header {
       &:hover {
         text-decoration: underline;
       }
-      &.active {
-        color: $accent-color-1;
-        font-weight: 900;
-        font-family: "Lato", sans-serif;
-      }
+    }
+    &.active a {
+      color: $accent-color-1;
+      font-weight: 900;
+      font-family: "Lato", sans-serif;
     }
   }
 }
 
 .login-nav {
-  float: right;
   li {
     display: inline-block;
     padding: 0 16px;
@@ -355,6 +360,7 @@ header {
 }
 
 .header-content {
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -485,7 +491,6 @@ section {
     }
 
     &:hover .statbar-item-wrap {
-      background-color: rgba(0, 0, 0, 0.6);
       cursor: default;
     }
 
@@ -497,16 +502,28 @@ section {
   .statbar-item-1 {
     background: url($image_dir + "statbar-item-1.jpg") 0 0 no-repeat;
     background-size: cover;
+    &:hover {
+      background: url($image_dir + "statbar-item-1-bw.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+
   }
   .statbar-item-2 {
     background: url($image_dir + "statbar-item-2.jpg") 0 0 no-repeat;
     background-size: cover;
+    &:hover {
+      background: url($image_dir + "statbar-item-2-bw.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
   }
   .statbar-item-3 {
     background: url($image_dir + "statbar-item-3.jpg") 0 0 no-repeat;
     background-size: cover;
     p {
       color: $accent-color-1;
+    }
+    &:hover .statbar-item-wrap {
+      background-color: rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -830,12 +847,13 @@ i.step-icon-10 {
     width: 145px;
     height: 127px;
     display: block;
-    background-image: url($image_dir + "drop-pin-yellow.png");
+    background: url($image_dir + "drop-pin-yellow.png") center no-repeat;
     padding: 30px 75px 0 0;
     text-align: center;
     color: #fff;
     font-family: 'Lato', sans-serif;
     font-size: 21px;
+    background-size: contain;
 
     &:nth-child(odd) {
       background-image: url($image_dir + "drop-pin-blue.png");
@@ -885,7 +903,9 @@ i.step-icon-10 {
     display: table-cell;
     width: 60%;
     height: 390px;
-//    background: url($image_dir + "circle.png") center no-repeat;
+    background: url($image_dir + "circle.png") center no-repeat;
+    background-size: contain;
+    max-width: 577px;
   }
   .publish-desc {
     display: table-cell;
@@ -912,6 +932,108 @@ i.step-icon-10 {
 
 .step-5 {
   padding: 80px 0 0;
+  max-width: none;
+  h2 {
+    padding-bottom: 40px;
+  }
+}
+
+.statbar-2 {
+  @extend .statbar-1;
+  padding-top: 10px;
+  text-align: center;
+
+  li:after {
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .statbar-item-1 {
+    background: url($image_dir + "statbar-item-4.jpg") 0 0 no-repeat;
+    background-size: cover;
+    &:hover {
+      background: url($image_dir + "statbar-item-4-bw.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+
+  }
+  .statbar-item-2 {
+    background: url($image_dir + "statbar-item-5.jpg") 0 0 no-repeat;
+    background-size: cover;
+    &:hover {
+      background: url($image_dir + "statbar-item-5-bw.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+  .statbar-item-3 {
+    background: url($image_dir + "statbar-item-6.jpg") 0 0 no-repeat;
+    background-size: cover;
+    p {
+      color: $accent-color-1;
+    }
+    &:hover .statbar-item-wrap {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .statbar-item-wrap {
+    position: relative;
+  }
+
+  &:before {
+    content: '';
+    width: calc((100% / 6) * 4);
+    height: 58px;
+    border-top: 1px solid #eaeaea;
+    display: block;
+    margin: auto;
+  }
+
+  .statbar-item-1:before,
+  .statbar-item-2:before,
+  .statbar-item-3:before {
+    content: '';
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    background: $accent-color-1;
+    border: 3px solid #fff;
+    @include border-radius(50%);
+    top: -9px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .statbar-item-2:before {
+    background: $accent-color-2;
+  }
+  .statbar-item-3:before {
+    background: #44474c;
+  }
+
+  .statbar-item-wrap:before {
+    content: '';
+    position: absolute;
+    height: 46px;
+    width: 1px;
+    display: block;
+    background: #eaeaea;
+    left: 50%;
+    transform: translate(-50%);
+    top: -58px;
+    overflow: hidden;
+  }
+
+  .statbar-item-2 .statbar-item-wrap:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -64px;
+    background: #d7d7d7;
+    height: 11px;
+    width: 11px;
+    @include border-radius(50%);
+  }
 }
 
 /*------------------------------------*\
@@ -926,8 +1048,8 @@ i.step-icon-10 {
 }
 
 .sign-up-wrap {
-//  background: url($image_dir + "signup-text-bg.png") center 0 repeat-x;
-  background: rgba(255,255,255, .17);
+  //  background: url($image_dir + "signup-text-bg.png") center 0 repeat-x;
+  background: rgba(255, 255, 255, .17);
   height: 272px;
   text-align: center;
 }
@@ -979,7 +1101,7 @@ i.step-icon-10 {
 \*------------------------------------*/
 footer {
   background: #fbd273 url($image_dir + "footer-shadow.png") 0 0 repeat-x;
-  height: 283px;
+  min-height: 283px;
   padding-top: 90px;
   color: #44474c;
   .copyright {
@@ -1025,4 +1147,315 @@ footer {
       }
     }
   }
+}
+
+/*------------------------------------*\
+    BREAKPOINT  ---  860
+\*------------------------------------*/
+
+@media screen and (max-width: 860px) {
+  .top-nav, .login-nav {
+    li {
+      padding: 0 7px;
+    }
+  }
+  .create-guide p {
+    width: 90%;
+  }
+}
+
+/*------------------------------------*\
+    BREAKPOINT  ---  768
+\*------------------------------------*/
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    padding-left: 0;
+  }
+  header {
+    background: $accent-color-1;
+    height: 79px;
+  }
+
+  .logo {
+    left: 50%;
+    transform: translate(-50%);
+    background-position: 0 -26px;
+  }
+
+  .menu-btn {
+    display: block;
+    margin-left: 30px;
+    width: 33px;
+    height: 30px;
+    text-decoration: none !important;
+    position: relative;
+    z-index: 101;
+    background: url($image_dir + "icon-menu-btn.png") center no-repeat;
+  }
+
+  .top-nav, .login-nav {
+    display: none;
+    float: none;
+    padding: 22px 0 0;
+    li {
+      padding: 0;
+      a {
+        display: block;
+        color: #44474c;
+        font-size: 27px;
+        font-weight: normal;
+        text-align: left;
+        background: rgba(231, 194, 108, 0.9);
+        width: 100%;
+        padding: 30px 0 30px 60px;
+        border-bottom: 1px solid #e7c168;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &.active a {
+        font-weight: 900;
+        color: #44474c;
+      }
+    }
+  }
+
+  .top-nav.opened,
+  .login-nav.opened {
+    display: block;
+    li {
+      display: block;
+    }
+  }
+
+  .login-nav {
+    padding: 0;
+    li {
+      .icon-hotel, .icon-traveler {
+        display: none;
+      }
+    }
+  }
+
+  .overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .step-2 {
+    .tabs_container {
+      box-sizing: content-box;
+      > div {
+        h3 {
+          display: block;
+          padding: 0;
+        }
+      }
+    }
+
+    .tabs li {
+      a.tabulous_active:after {
+        width: 100%;
+        height: 53px;
+        background-size: contain;
+      }
+      a {
+        padding: 10px 5px 60px;
+        p {
+          font-size: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    i[class*="step-icon-"] {
+      height: 90px;
+    }
+  }
+
+  .statbar-1, .statbar-2 {
+    li {
+      width: 100%;
+      text-align: center;
+
+      &:before,
+      .statbar-item-wrap:before,
+      .statbar-item-wrap:after {
+        display: none;
+      }
+      &:after {
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+  }
+  .statbar-2:before {
+    display: none;
+  }
+
+  .preferences-list {
+    background: none;
+    height: auto;
+    padding-top: 0;
+    li[class*="drop-pin-"] {
+      display: none;
+      //      top: auto;
+      //      bottom: 10px;
+      //      left: 10%;
+    }
+  }
+  .preferences-list:after {
+    content: '';
+    display: block;
+    height: 730px;
+    width: 100%;
+    background: url("../images/screen-pic-mobile.jpg") center no-repeat;
+    background-size: contain;
+  }
+
+  .preferences-list li[class*="preference-"] {
+    display: block;
+    position: static;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 0 20px 0 110px;
+
+    a.number {
+      position: absolute;
+      left: 30px;
+      top: 10px;
+    }
+  }
+
+  .step-4 {
+    .publish-desc,
+    .publish-guide {
+      display: block;
+      width: 90%;
+      text-align: center;
+      margin: auto;
+    }
+    .publish-guide {
+      background: url($image_dir + "circle-mobile.jpg") center no-repeat;
+      background-size: contain;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+  }
+
+  footer {
+    padding-top: 50px;
+  }
+
+  .footer-nav li {
+    display: block;
+    a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 2;
+    }
+  }
+
+  .social-icons li a {
+    font-size: 22px;
+  }
+}
+
+/*------------------------------------*\
+    BREAKPOINT  ---  660
+\*------------------------------------*/
+
+@media screen and (max-width: 660px) {
+  .sign-up-bg {
+    padding-top: 150px;
+  }
+  .sign-up-wrap {
+    height: 350px;
+  }
+  .sign-up h3 {
+    font-size: 44px;
+  }
+
+  .signup-form {
+    width: 90%;
+  }
+
+  .email-submit,
+  .email-field {
+    width: 50%;
+    min-width: 0;
+  }
+
+  .step-2 {
+    i[class*="step-icon-"] {
+      height: 60px;
+      width: 70px;
+    }
+  }
+
+  .step-4 {
+    .publish-guide {
+      height: 280px;
+    }
+  }
+
+  .preferences-list:after {
+    height: 630px;
+  }
+}
+
+/*------------------------------------*\
+    BREAKPOINT  ---  480
+\*------------------------------------*/
+@media screen and (max-width: 480px) {
+  .header-content {
+    min-width: 320px;
+  }
+
+  .logo {
+    right: 10px;
+    left: auto;
+    transform: translate(0);
+  }
+
+  .sign-up-bg {
+    padding-top: 100px;
+  }
+  .sign-up-wrap {
+    height: 400px;
+  }
+
+  .sign-up h3 {
+    font-size: 38px;
+  }
+  .email-submit,
+  .email-field {
+    width: 100%;
+    display: block;
+    @include border-radius(6px);
+    margin-bottom: 10px;
+  }
+
+  .step-2 {
+    i[class*="step-icon-"] {
+      height: 40px;
+      width: 30px;
+    }
+  }
+
+  .preferences-list:after {
+    height: 450px;
+  }
+
 }

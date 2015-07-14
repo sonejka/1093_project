@@ -33,19 +33,21 @@
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
-
 <div class="header-wrap">
   <header>
     <div class="header-container">
+
+      <a href="javascript:void(0);" class="menu-btn"></a>
+      <a class="logo" href="#"></a>
+
+      <ul class="top-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Request Demo</a></li>
+      </ul>
       <ul class="login-nav">
         <li><a href="#"><i class="icon-hotel"></i>Hotel Login</a></li>
         <li><a href="#"><i class="icon-traveler"></i>Traveler Login</a></li>
-      </ul>
-      <a class="logo" href="#"></a>
-      <ul class="top-nav">
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Request Demo</a></li>
       </ul>
     </div>
   </header>
@@ -271,10 +273,32 @@
   </section>
 </div>
 
-<!--<section class="step-5">-->
+<section class="step-5">
 
-  <!--<h2>Step 5: <strong>Watch Them Enjoy</strong></h2>-->
-<!--</section>-->
+  <h2>Step 5: <strong>Watch Them Enjoy</strong></h2>
+
+  <ul class="statbar-2">
+    <li class="statbar-item-1">
+      <div class="statbar-item-wrap">
+
+        <h3>50%</h3>
+
+        <p>of the average guests' <strong>time is spent off-property.</strong></p></div>
+    </li>
+    <li class="statbar-item-2">
+      <div class="statbar-item-wrap"><h3>63%</h3>
+
+        <p>of the average guests' <strong>budget is spent off-property.</strong></p></div>
+    </li>
+    <li class="statbar-item-3">
+      <div class="statbar-item-wrap"><h3>99%</h3>
+
+        <p>of hoteliers know their guests are impacted by <strong>their experiences outside of the hotel.</strong></p>
+      </div>
+    </li>
+  </ul>
+
+</section>
 
 <div class="sign-up-bg">
   <div class="sign-up-wrap">
@@ -312,11 +336,12 @@
   </ul>
   <p class="copyright">Copyright &copy; All rights reserved CITYKEY</p>
 </footer>
+<div class="overlay"></div>
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
-<script src="/bower_components/modernizr/modernizr.js"></script>
-<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!--<script src="/bower_components/modernizr/modernizr.js"></script>-->
+<!--<script src="/bower_components/jquery/dist/jquery.js"></script>-->
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -325,24 +350,22 @@
 <!-- endbuild -->
 
 <!-- build:js scripts/main.js -->
-<script src="scripts/main.js"></script>
-<script type="text/javascript" src="tabulous.js"></script>
-<script type="text/javascript" src="js.js"></script>
-<!-- endbuild -->
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="tabulous.js"></script>
 <script type="text/javascript" src="js.js"></script>
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 
-<script>
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 1) {
-      $('header').addClass("sticky");
-    }
-    else {
-      $('header').removeClass("sticky");
-    }
-  });
-</script>
+
+<!--<script>-->
+  <!--$(window).scroll(function () {-->
+    <!--if ($(this).scrollTop() > 1) {-->
+      <!--$('header').addClass("sticky");-->
+    <!--}-->
+    <!--else {-->
+      <!--$('header').removeClass("sticky");-->
+    <!--}-->
+  <!--});-->
+<!--</script>-->
 </body>
 </html>
