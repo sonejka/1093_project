@@ -93,13 +93,13 @@ $accent-color-2: #7bc5c4;
 //  filter: alpha(opacity=$opacity-ie); //IE8
 //}
 //
-//@mixin transform($transforms) {
-//  -moz-transform: $transforms;
-//  -o-transform: $transforms;
-//  -ms-transform: $transforms;
-//  -webkit-transform: $transforms;
-//  transform: $transforms;
-//}
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
 //
 //// rotate
 //@mixin rotate($deg) {
@@ -107,14 +107,14 @@ $accent-color-2: #7bc5c4;
 //}
 //
 //// scale
-//@mixin scale($scale) {
-//  @include transform(scale($scale));
-//}
-//
-//// translate
-//@mixin translate($x, $y) {
-//  @include transform(translate($x, $y));
-//}
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
 //
 //// skew
 //@mixin skew($x, $y) {
@@ -130,64 +130,6 @@ $accent-color-2: #7bc5c4;
 //  transform-origin: $origin;
 //}
 
-/*------------------------------------*\
-    FONT-FACE
-\*------------------------------------*/
-
-//@font-face {
-//  font-family: "LatoRegular";
-//  src: url('../fonts/Lato/lato-regular.eot');
-//  src: url('../fonts/Lato/lato-regular.eot?#iefix') format('embedded-opentype'),
-//  url('../fonts/Lato/lato-regular.woff') format('woff'),
-//  url('../fonts/Lato/lato-regular.ttf') format('truetype'),
-//  url('../fonts/Lato/lato-regular.svg#latoregular') format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: "LatoBlack";
-//  src: url('../fonts/Lato/lato-black.eot');
-//  src: url('../fonts/Lato/lato-black.eot?#iefix') format('embedded-opentype'),
-//  url('../fonts/Lato/lato-black.woff') format('woff'),
-//  url('../fonts/Lato/lato-black.ttf') format('truetype'),
-//  url('../fonts/Lato/lato-black.svg#latoblack') format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: "LatoBold";
-//  src: url('../fonts/Lato/lato-bold.eot');
-//  src: url('../fonts/Lato/lato-bold.eot?#iefix') format('embedded-opentype'),
-//  url('../fonts/Lato/lato-bold.woff') format('woff'),
-//  url('../fonts/Lato/lato-bold.ttf') format('truetype'),
-//  url('../fonts/Lato/lato-bold.svg#latobold') format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-
-//@font-face {
-//  font-family: "MontserratBold";
-//  src: url('../fonts/Montserrat/montserrat-bold.eot');
-//  src: url('../fonts/Montserrat/montserrat-bold.eot?#iefix') format('embedded-opentype'),
-//  url('../fonts/Montserrat/montserrat-bold.woff') format('woff'),
-//  url('../fonts/Montserrat/montserrat-bold.ttf') format('truetype'),
-//  url('../fonts/Montserrat/montserrat-bold.svg#montserratbold') format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: "MontserratRegular";
-//  src: url('../fonts/Montserrat/montserrat-regular.eot');
-//  src: url('../fonts/Montserrat/montserrat-regular.eot?#iefix') format('embedded-opentype'),
-//  url('../fonts/Montserrat/montserrat-regular.woff') format('woff'),
-//  url('../fonts/Montserrat/montserrat-regular.ttf') format('truetype'),
-//  url('../fonts/Montserrat/montserrat-regular.svg#montserratregular') format('svg');
-//  font-weight: normal;
-//  font-style: normal;
-//}
 
 /*------------------------------------*\
     COMMON STYLES
@@ -238,11 +180,16 @@ p {
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
-.header-wrap {
+.header-wrap-1 {
   background: url($image_dir + "header_bg.jpg") no-repeat center 0;
   background-size: cover;
   height: 680px;
   position: relative;
+}
+
+.header-wrap-2 {
+  @extend .header-wrap-1;
+  background-image: url($image_dir + "header_bg-2.jpg");
 }
 
 header {
@@ -337,11 +284,8 @@ header {
   .logo {
     background-position: 0 -26px;
   }
-  .top-nav a {
-    color: #44474c;
-    &.active {
-      color: #44474c;
-    }
+  .top-nav a, .top-nav li.active a {
+    color: #44474c !important;
   }
   .login-nav {
     li {
@@ -364,7 +308,8 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+//  transform: translate(-50%, -50%);
+  @include translate(-50%, -50%);
   margin-top: 40px;
   text-align: center;
   h1 {
@@ -733,7 +678,8 @@ i.step-icon-10 {
         z-index: 1;
         bottom: -8px;
         left: 50%;
-        transform: translateX(-50%);
+//        transform: translateX(-50%);
+        @include translate(-50%, 0);
         background: url($image_dir + "tab-arrow.png") center no-repeat;
         height: 68px;
         width: 103px;
@@ -783,6 +729,7 @@ i.step-icon-10 {
   background-size: contain;
   position: relative;
   li[class*="preference-"] {
+    cursor: pointer;
     position: absolute;
     text-align: center;
     width: 33%;
@@ -835,53 +782,79 @@ i.step-icon-10 {
   }
   .preference-4 {
     top: 670px;
-    left: 0;
+    left: 5%;
   }
   .preference-5 {
     top: 630px;
     left: 64%;
   }
-
-  li[class*="drop-pin-"] {
-    position: absolute;
-    width: 145px;
-    height: 127px;
-    display: block;
-    background: url($image_dir + "drop-pin-yellow.png") center no-repeat;
-    padding: 30px 75px 0 0;
-    text-align: center;
-    color: #fff;
-    font-family: 'Lato', sans-serif;
-    font-size: 21px;
-    background-size: contain;
-
-    &:nth-child(odd) {
-      background-image: url($image_dir + "drop-pin-blue.png");
-    }
-  }
-
-  .drop-pin-1 {
-    top: 350px;
-    left: 35%;
-  }
-  .drop-pin-2 {
-    top: 220px;
-    left: 50%;
-  }
-  .drop-pin-3 {
-    top: 400px;
-    left: 70%;
-  }
-  .drop-pin-4 {
-    top: 530px;
-    left: 30%;
-  }
-  .drop-pin-5 {
-    top: 550px;
-    left: 52%;
-  }
-
 }
+
+.preferences-list.drop-pin-1-bg {
+  background-image:url($image_dir + "drop-pin-1-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-size: contain;
+}
+.preferences-list.drop-pin-2-bg {
+  background-image:url($image_dir + "drop-pin-2-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-size: contain;
+}
+.preferences-list.drop-pin-3-bg {
+  background-image:url($image_dir + "drop-pin-3-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-size: contain;
+}
+.preferences-list.drop-pin-4-bg {
+  background-image:url($image_dir + "drop-pin-4-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-size: contain;
+}
+.preferences-list.drop-pin-5-bg {
+  background-image:url($image_dir + "drop-pin-5-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-size: contain;
+}
+//  li[class*="drop-pin-"] {
+//    display: none;
+//    position: absolute;
+//    width: 145px;
+//    height: 127px;
+//    background: url($image_dir + "drop-pin-yellow.png") center no-repeat;
+//    padding: 30px 75px 0 0;
+//    text-align: center;
+//    color: #fff;
+//    font-family: 'Lato', sans-serif;
+//    font-size: 21px;
+//    background-size: contain;
+//
+//    &:nth-child(odd) {
+//      background-image: url($image_dir + "drop-pin-blue.png");
+//    }
+//  }
+
+//  li.opened[class*="drop-pin-"] {
+//    display: block;
+//  }
+
+//  .drop-pin-1 {
+//    top: 350px;
+//    left: 35%;
+//  }
+//  .drop-pin-2 {
+//    top: 220px;
+//    left: 50%;
+//  }
+//  .drop-pin-3 {
+//    top: 400px;
+//    left: 70%;
+//  }
+//  .drop-pin-4 {
+//    top: 530px;
+//    left: 30%;
+//  }
+//  .drop-pin-5 {
+//    top: 550px;
+//    left: 52%;
+//  }
+
+
+
 
 /*------------------------------------*\
     STEP-4
@@ -945,7 +918,8 @@ i.step-icon-10 {
 
   li:after {
     left: 50%;
-    transform: translate(-50%);
+//    transform: translate(-50%);
+    @include translate(-50%, -50%);
   }
 
   .statbar-item-1 {
@@ -1001,7 +975,8 @@ i.step-icon-10 {
     @include border-radius(50%);
     top: -9px;
     left: 50%;
-    transform: translate(-50%);
+//    transform: translate(-50%);
+    @include translate(-50%, -50%);
   }
   .statbar-item-2:before {
     background: $accent-color-2;
@@ -1018,7 +993,8 @@ i.step-icon-10 {
     display: block;
     background: #eaeaea;
     left: 50%;
-    transform: translate(-50%);
+//    transform: translate(-50%);
+    @include translate(-50%, -50%);
     top: -58px;
     overflow: hidden;
   }
@@ -1027,7 +1003,8 @@ i.step-icon-10 {
     content: '';
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
+//    transform: translate(-50%);
+    @include translate(-50%, -50%);
     top: -64px;
     background: #d7d7d7;
     height: 11px;
@@ -1162,6 +1139,18 @@ footer {
   .create-guide p {
     width: 90%;
   }
+
+  .preferences-list, .preferences-list[class*="drop-pin"] {
+    background-position: center 220px;
+    background-repeat: no-repeat;
+  }
+  .preferences-list .preference-4 {
+    top: 610px;
+  }
+  .preferences-list .preference-5 {
+    top: 570px;
+  }
+
 }
 
 /*------------------------------------*\
@@ -1179,7 +1168,8 @@ footer {
 
   .logo {
     left: 50%;
-    transform: translate(-50%);
+//    transform: translate(-50%);
+    @include translate(-50%, -50%);
     background-position: 0 -26px;
   }
 
@@ -1291,7 +1281,8 @@ footer {
       }
       &:after {
         left: 50%;
-        transform: translate(-50%);
+//        transform: translate(-50%);
+        @include translate(-50%, -50%);
       }
     }
   }
@@ -1302,14 +1293,19 @@ footer {
   .preferences-list {
     background: none;
     height: auto;
-    padding-top: 0;
-    li[class*="drop-pin-"] {
-      display: none;
-      //      top: auto;
-      //      bottom: 10px;
-      //      left: 10%;
-    }
+    padding-top: 0;  }
+  .preferences-list[class*="drop-pin"] {
+    background: none;
   }
+  .preferences-list li[class*="preference-"] {
+    cursor: default;
+  }
+  //    li[class*="drop-pin-"] {
+//      display: none;
+//      //      top: auto;
+//      //      bottom: 10px;
+//      //      left: 10%;
+//    }
   .preferences-list:after {
     content: '';
     display: block;
@@ -1426,7 +1422,8 @@ footer {
   .logo {
     right: 10px;
     left: auto;
-    transform: translate(0);
+//    transform: translate(0);
+    @include translate(0, 0);
   }
 
   .sign-up-bg {
