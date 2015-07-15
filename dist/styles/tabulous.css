@@ -39,6 +39,11 @@
   max-width: 1200px;
   padding: 0 50px;
   left: 50%;
+  /*transform: translateX(-50%);*/
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
