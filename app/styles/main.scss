@@ -100,6 +100,7 @@ $accent-color-2: #7bc5c4;
   -webkit-transform: $transforms;
   transform: $transforms;
 }
+
 //
 //// rotate
 //@mixin rotate($deg) {
@@ -115,6 +116,7 @@ $accent-color-2: #7bc5c4;
 @mixin translate($x, $y) {
   @include transform(translate($x, $y));
 }
+
 //
 //// skew
 //@mixin skew($x, $y) {
@@ -129,7 +131,6 @@ $accent-color-2: #7bc5c4;
 //  -webkit-transform-origin: $origin;
 //  transform-origin: $origin;
 //}
-
 
 /*------------------------------------*\
     COMMON STYLES
@@ -308,7 +309,7 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-//  transform: translate(-50%, -50%);
+  //  transform: translate(-50%, -50%);
   @include translate(-50%, -50%);
   margin-top: 40px;
   text-align: center;
@@ -621,9 +622,9 @@ i.step-icon-10 {
     color: $accent-color-2;
   }
   .tabs_container {
-    position: relative;
     > div {
-      display: table-row;
+      display: table;
+      height: 200px;
       h3 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
@@ -639,6 +640,7 @@ i.step-icon-10 {
         display: table-cell;
         vertical-align: top;
       }
+
     }
     &:before {
       content: '';
@@ -650,6 +652,7 @@ i.step-icon-10 {
       top: -45px;
       left: 0;
     }
+
   }
 
   .tabs {
@@ -678,7 +681,7 @@ i.step-icon-10 {
         z-index: 1;
         bottom: -8px;
         left: 50%;
-//        transform: translateX(-50%);
+        //        transform: translateX(-50%);
         @include translate(-50%, 0);
         background: url($image_dir + "tab-arrow.png") center no-repeat;
         height: 68px;
@@ -791,25 +794,30 @@ i.step-icon-10 {
 }
 
 .preferences-list.drop-pin-1-bg {
-  background-image:url($image_dir + "drop-pin-1-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-image: url($image_dir + "drop-pin-1-bg.png"), url($image_dir + "screen-pic.jpg");
   background-size: contain;
 }
+
 .preferences-list.drop-pin-2-bg {
-  background-image:url($image_dir + "drop-pin-2-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-image: url($image_dir + "drop-pin-2-bg.png"), url($image_dir + "screen-pic.jpg");
   background-size: contain;
 }
+
 .preferences-list.drop-pin-3-bg {
-  background-image:url($image_dir + "drop-pin-3-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-image: url($image_dir + "drop-pin-3-bg.png"), url($image_dir + "screen-pic.jpg");
   background-size: contain;
 }
+
 .preferences-list.drop-pin-4-bg {
-  background-image:url($image_dir + "drop-pin-4-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-image: url($image_dir + "drop-pin-4-bg.png"), url($image_dir + "screen-pic.jpg");
   background-size: contain;
 }
+
 .preferences-list.drop-pin-5-bg {
-  background-image:url($image_dir + "drop-pin-5-bg.png"), url($image_dir + "screen-pic.jpg");
+  background-image: url($image_dir + "drop-pin-5-bg.png"), url($image_dir + "screen-pic.jpg");
   background-size: contain;
 }
+
 //  li[class*="drop-pin-"] {
 //    display: none;
 //    position: absolute;
@@ -852,9 +860,6 @@ i.step-icon-10 {
 //    top: 550px;
 //    left: 52%;
 //  }
-
-
-
 
 /*------------------------------------*\
     STEP-4
@@ -918,7 +923,7 @@ i.step-icon-10 {
 
   li:after {
     left: 50%;
-//    transform: translate(-50%);
+    //    transform: translate(-50%);
     @include translate(-50%, -50%);
   }
 
@@ -975,7 +980,7 @@ i.step-icon-10 {
     @include border-radius(50%);
     top: -9px;
     left: 50%;
-//    transform: translate(-50%);
+    //    transform: translate(-50%);
     @include translate(-50%, -50%);
   }
   .statbar-item-2:before {
@@ -993,7 +998,7 @@ i.step-icon-10 {
     display: block;
     background: #eaeaea;
     left: 50%;
-//    transform: translate(-50%);
+    //    transform: translate(-50%);
     @include translate(-50%, -50%);
     top: -58px;
     overflow: hidden;
@@ -1003,7 +1008,7 @@ i.step-icon-10 {
     content: '';
     position: absolute;
     left: 50%;
-//    transform: translate(-50%);
+    //    transform: translate(-50%);
     @include translate(-50%, -50%);
     top: -64px;
     background: #d7d7d7;
@@ -1168,7 +1173,7 @@ footer {
 
   .logo {
     left: 50%;
-//    transform: translate(-50%);
+    //    transform: translate(-50%);
     @include translate(-50%, -50%);
     background-position: 0 -26px;
   }
@@ -1238,11 +1243,27 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
   }
 
+  section {
+    padding: 50px 0;
+  > h2 {
+    font-size: 32px;
+  }
+  }
+
+  .step-2, .step-3, .step-5 {
+    padding: 50px 0 0;
+  }
+
+  .step-4 {
+    padding-bottom: 50px;
+  }
+
   .step-2 {
     .tabs_container {
       box-sizing: content-box;
+      max-height: 420px;
       > div {
-        h3 {
+        h3, p {
           display: block;
           padding: 0;
         }
@@ -1281,7 +1302,7 @@ footer {
       }
       &:after {
         left: 50%;
-//        transform: translate(-50%);
+        //        transform: translate(-50%);
         @include translate(-50%, -50%);
       }
     }
@@ -1293,7 +1314,8 @@ footer {
   .preferences-list {
     background: none;
     height: auto;
-    padding-top: 0;  }
+    padding-top: 40px;
+  }
   .preferences-list[class*="drop-pin"] {
     background: none;
   }
@@ -1301,11 +1323,11 @@ footer {
     cursor: default;
   }
   //    li[class*="drop-pin-"] {
-//      display: none;
-//      //      top: auto;
-//      //      bottom: 10px;
-//      //      left: 10%;
-//    }
+  //      display: none;
+  //      //      top: auto;
+  //      //      bottom: 10px;
+  //      //      left: 10%;
+  //    }
   .preferences-list:after {
     content: '';
     display: block;
@@ -1393,6 +1415,19 @@ footer {
     min-width: 0;
   }
 
+  .step-1-list li {
+    width: 30%;
+    min-width: 100px;
+    padding: 0 5px 10px 5px;
+    i[class*="step-icon-"] {
+      width: 50px !important;
+      height: 60px;
+    }
+    &:after {
+      top: 25px;
+    }
+  }
+
   .step-2 {
     i[class*="step-icon-"] {
       height: 60px;
@@ -1422,7 +1457,7 @@ footer {
   .logo {
     right: 10px;
     left: auto;
-//    transform: translate(0);
+    //    transform: translate(0);
     @include translate(0, 0);
   }
 
@@ -1442,6 +1477,7 @@ footer {
     display: block;
     @include border-radius(6px);
     margin-bottom: 10px;
+    -webkit-appearance: none;
   }
 
   .step-2 {
