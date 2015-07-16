@@ -78,15 +78,14 @@ $accent-color-2: #7bc5c4;
   border-radius: $radius;
 }
 
-//
-//@mixin transition($transition-property, $transition-time, $method) {
-//  -webkit-transition: $transition-property $transition-time $method;
-//  -moz-transition: $transition-property $transition-time $method;
-//  -ms-transition: $transition-property $transition-time $method;
-//  -o-transition: $transition-property $transition-time $method;
-//  transition: $transition-property $transition-time $method;
-//}
-//
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
 //@mixin opacity($opacity) {
 //  opacity: $opacity;
 //  $opacity-ie: $opacity * 100;
@@ -101,7 +100,6 @@ $accent-color-2: #7bc5c4;
   transform: $transforms;
 }
 
-//
 //// rotate
 //@mixin rotate($deg) {
 //  @include transform(rotate(#{$deg}deg));
@@ -159,6 +157,7 @@ body {
 
 p {
   padding: 10px 0;
+  margin: 0;
 }
 
 .content-wrap {
@@ -350,6 +349,13 @@ header {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+
+  -o-transition: color .3s ease-out, background .5s ease-in;
+  -ms-transition: color .3s ease-out, background .5s ease-in;
+  -moz-transition: color .3s ease-out, background .5s ease-in;
+  -webkit-transition: color .3s ease-out, background .5s ease-in;
+  /* ...and now override with proper CSS property */
+  transition: color .3s ease-out, background .5s ease-in;
   &:hover {
     color: #44474c;
     background-color: $accent-color-1;
@@ -362,7 +368,7 @@ header {
 
 section {
   @extend .content-wrap;
-  padding: 80px 0;
+  padding: 60px 20px;
   blockquote {
     font-size: 24px;
     font-family: 'Lato', sans-serif;
@@ -501,8 +507,8 @@ section {
     STEP-1
 \*------------------------------------*/
 
-.step-1, .step-2, .step-3, .step-5 {
-  padding-top: 0;
+.step-1, .step-3, .step-5 {
+  padding-top: 60px;
   h2 {
     color: #b7b7b7;
     strong {
@@ -616,15 +622,31 @@ i.step-icon-10 {
 }
 
 .step-2 {
-  padding: 80px 0 0;
+    padding: 60px 0 0;
   max-width: none;
   h2 strong {
     color: $accent-color-2;
   }
-  .tabs_container {
+
+  #tabs {
+    padding: 30px 0 0;
+    margin-bottom: 0;
+  }
+
+
+  #tabs_container  {
+    overflow: visible;
+    background: $accent-color-2;
+    color: #fff;
+
     > div {
       display: table;
-      height: 200px;
+      width: 100%;
+      max-width: 1000px;
+      left: 50%;
+      @include translate(-50%, 0);
+      margin: auto;
+
       h3 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
@@ -632,6 +654,7 @@ i.step-icon-10 {
         display: table-cell;
         vertical-align: top;
         padding-right: 40px;
+        width: 33%;
       }
       p {
         font-size: 18px;
@@ -657,17 +680,30 @@ i.step-icon-10 {
 
   .tabs {
     display: table;
+    width: 100%;
+    @extend .content-wrap;
   }
-  .tabs li {
+  #tabs li {
     position: relative;
     display: table-cell;
+    width: 20%;
+    margin: 0;
+    text-align: center;
+    vertical-align: top;
     float: none !important;
     a {
-      font-family: 'Lato', sans-serif;
+      color: #b7b7b7;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       font-size: 18px;
       display: inline-block;
       min-height: 120px;
+      padding: 30px 10px 60px;
       text-align: center;
+      background: transparent;
+      &:hover {
+        background: transparent;
+      }
 
       p {
         font-family: 'Montserrat', sans-serif;
@@ -689,6 +725,8 @@ i.step-icon-10 {
       }
 
       &.tabulous_active {
+        color: #7d7d7d !important;
+        background: transparent !important;
 
         i.step-icon-6 {
           background-image: url($image_dir + "icon-profile.svg");
@@ -721,7 +759,7 @@ i.step-icon-10 {
 \*------------------------------------*/
 
 .step-3 {
-  padding: 80px 0 0;
+  padding: 60px 0 0;
 }
 
 .preferences-list {
@@ -873,7 +911,7 @@ i.step-icon-10 {
   @extend .step-2;
   max-width: 1200px;
   overflow: hidden;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   h2 {
     margin-bottom: 60px;
   }
@@ -909,7 +947,7 @@ i.step-icon-10 {
 \*------------------------------------*/
 
 .step-5 {
-  padding: 80px 0 0;
+  padding: 60px 0 0;
   max-width: none;
   h2 {
     padding-bottom: 40px;
@@ -1132,6 +1170,102 @@ footer {
 }
 
 /*------------------------------------*\
+    DEMO PAGE
+\*------------------------------------*/
+
+.macbook-pic {
+  background: url($image_dir + "macbook-pic.png") center no-repeat;
+  background-size: contain;
+  height: 520px;
+  position: absolute;
+  top: auto;
+  bottom: -170px;
+  width: 100%;
+}
+
+.header-content.demo-page {
+  top: 200px;
+  margin: 0;
+  p {
+    max-width: 100%;
+    font-family: Lato, sans-serif;
+    font-size: 30px;
+  }
+}
+
+.request-form-wrap {
+  margin-top: 230px;
+  background: #f3f5f9;
+}
+
+.request-form {
+  max-width: 1000px;
+  padding: 80px 20px;
+  h2, h2 + p {
+    width: 30%;
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+  }
+  h2 + p {
+    display: table-cell;
+    width: 70%;
+  }
+
+  .request-form-table {
+    padding: 50px 0 0;
+    overflow: hidden;
+    width: 100%;
+    [class*="request-form-col"] {
+      .request-form-cell {
+        width: 33.3%;
+        float: left;
+        padding: 12px 0;
+      }
+    }
+    .request-form-col-2 {
+      .request-form-cell:first-child {
+        width: 66.6%;
+      }
+    }
+
+    input, textarea {
+      height: 52px;
+      line-height: 1;
+      width: 90%;
+      color: #a1a1a1;
+      background: #e4e7ed;
+      border: none;
+      @include border-radius(5px);
+      font-size: 18px;
+      padding: 0 10px;
+    }
+
+    textarea {
+      width: 95%;
+      max-width: 95%;
+      height: 126px;
+    }
+
+    .request-btn {
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 1px;
+      @extend .request-info-btn;
+      box-shadow: none;
+      background: $accent-color-1;
+      height: 52px;
+      margin: 0;
+      &:hover {
+        background: $accent-color-2;
+        color: #fff;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
     BREAKPOINT  ---  860
 \*------------------------------------*/
 
@@ -1156,6 +1290,11 @@ footer {
     top: 570px;
   }
 
+  .request-form .request-form-table .request-btn {
+    font-size: 16px;
+    min-width: 0;
+  }
+
 }
 
 /*------------------------------------*\
@@ -1171,10 +1310,21 @@ footer {
     height: 79px;
   }
 
+  .header-content.demo-page {
+    top: 180px;
+  }
+
+  .header-wrap-2 {
+    height: 500px;
+    .macbook-pic {
+      height: 320px;
+      bottom: -100px;
+    }
+  }
+
   .logo {
     left: 50%;
-    //    transform: translate(-50%);
-    @include translate(-50%, -50%);
+    @include translate(-50%, 0);
     background-position: 0 -26px;
   }
 
@@ -1233,6 +1383,11 @@ footer {
     }
   }
 
+  .overlay {
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+  }
   .overlay.active {
     position: fixed;
     top: 0;
@@ -1244,33 +1399,38 @@ footer {
   }
 
   section {
-    padding: 50px 0;
-  > h2 {
-    font-size: 32px;
+    padding: 60px 20px;
+    > h2 {
+      font-size: 32px;
+    }
   }
+
+  .devices-pic {
+    height: 200px;
   }
 
   .step-2, .step-3, .step-5 {
-    padding: 50px 0 0;
+    padding: 40px 0 0;
   }
 
   .step-4 {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 
   .step-2 {
-    .tabs_container {
-      box-sizing: content-box;
-      max-height: 420px;
+    #tabs_container {
+      padding: 40px 20px;
       > div {
+        padding: 0 30px;
         h3, p {
           display: block;
           padding: 0;
+          width: 100%;
         }
       }
     }
 
-    .tabs li {
+    #tabs li {
       a.tabulous_active:after {
         width: 100%;
         height: 53px;
@@ -1322,12 +1482,7 @@ footer {
   .preferences-list li[class*="preference-"] {
     cursor: default;
   }
-  //    li[class*="drop-pin-"] {
-  //      display: none;
-  //      //      top: auto;
-  //      //      bottom: 10px;
-  //      //      left: 10%;
-  //    }
+
   .preferences-list:after {
     content: '';
     display: block;
@@ -1373,6 +1528,7 @@ footer {
 
   footer {
     padding-top: 50px;
+    background-image: none;
   }
 
   .footer-nav li {
@@ -1387,6 +1543,32 @@ footer {
 
   .social-icons li a {
     font-size: 22px;
+  }
+
+  .request-form-wrap {
+    margin-top: 120px;
+  }
+
+  .request-form {
+    padding: 50px 20px;
+    h2 + p, h2 {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .request-form .request-form-table {
+    padding: 50px 0 0;
+    overflow: hidden;
+    width: 100%;
+    [class*="request-form-col"] {
+      .request-form-cell, .request-form-cell:first-child, input, textarea {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
   }
 }
 
@@ -1481,14 +1663,23 @@ footer {
   }
 
   .step-2 {
+
+    #tabs li a {
+      min-height: 60px;
+    }
+
     i[class*="step-icon-"] {
       height: 40px;
-      width: 30px;
+      width: 50px;
     }
   }
 
   .preferences-list:after {
     height: 450px;
+  }
+
+  .request-form-wrap {
+    margin-top: 80px;
   }
 
 }
