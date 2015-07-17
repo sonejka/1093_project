@@ -187,11 +187,6 @@ p {
   position: relative;
 }
 
-.header-wrap-2 {
-  @extend .header-wrap-1;
-  background-image: url($image_dir + "header_bg-2.jpg");
-}
-
 header {
   padding: 27px 0 26px 0;
   position: fixed;
@@ -304,8 +299,8 @@ header {
 }
 
 .header-content {
-  width: 100%;
   max-width: 1000px;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -316,19 +311,21 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 41px;
-    line-height: 39px;
+    line-height: 1;
     letter-spacing: 5px;
     text-transform: uppercase;
     color: $accent-color-1;
-    padding-bottom: 10px;
+    padding: 0 20px 10px;
+
   }
   p {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     line-height: 39px;
     color: #fff;
-    max-width: 450px;
+    max-width: 500px;
     margin: 0 auto;
+    padding: 0 20px;
   }
 }
 
@@ -1126,6 +1123,11 @@ footer {
     DEMO PAGE
 \*------------------------------------*/
 
+.header-wrap-2 {
+  @extend .header-wrap-1;
+  background-image: url($image_dir + "header_bg-2.jpg");
+}
+
 .macbook-pic {
   background: url($image_dir + "macbook-pic.png") center no-repeat;
   background-size: contain;
@@ -1202,6 +1204,7 @@ footer {
 
     .request-btn {
       @extend .request-info-btn;
+      cursor: pointer;
       min-width: 0;
       font-family: Montserrat, sans-serif;
       font-weight: 700;
@@ -1217,6 +1220,139 @@ footer {
       }
     }
   }
+}
+
+/*------------------------------------*\
+    ABOUT PAGE
+\*------------------------------------*/
+
+.header-wrap-3 {
+  @extend .header-wrap-1;
+  background-image: url($image_dir + "header_bg-3.jpg");
+  .header-content {
+    h1 {
+      font-size: 48px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: none;
+      letter-spacing: 2px;
+    }
+    p {
+      max-width: 500px;
+      font-family: 'Lato', sans-serif;
+      font-size: 30px;
+    }
+  }
+}
+
+.citykey-philosophy-wrap {
+  background: #f3f5f9;
+}
+
+.citykey-philosophy {
+  h2, h2 + p {
+    width: 35%;
+    padding-right: 30px;
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+  }
+  h2 + p {
+    display: table-cell;
+    width: 65%;
+    padding: 0;
+  }
+}
+
+.why-section {
+  padding-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  max-width: 1040px;
+}
+
+.why-text {
+  display: table-cell;
+  vertical-align: middle;
+  background: url($image_dir + "phone-pic.jpg") right bottom no-repeat;
+  height: 646px;
+  padding: 20px 500px 20px 20px;
+  h2, p {
+    text-align: left;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: $accent-color-1;
+    padding-bottom: 20px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+.tiled-images {
+  overflow: hidden;
+  li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 20%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+    .pic-desc {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      text-transform: uppercase;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      z-index: 2;
+//      opacity: 0;
+//      @include transition(opacity, linear , 0.1s)
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      background: $accent-color-1;
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      @include transition(opacity, ease-in, 0.3s)
+    }
+
+    &:hover {
+      .pic-desc {
+        display: block;
+      }
+
+      &::after {
+        opacity: 0.75;
+      }
+    }
+
+    &:nth-child(even):hover {
+      &::after {
+        background: $accent-color-2;
+      }
+    }
+  }
+
 }
 
 /*------------------------------------*\
@@ -1249,6 +1385,10 @@ footer {
     min-width: 0;
   }
 
+  .tiled-images li .pic-desc {
+    font-size: 22px;
+  }
+
 }
 
 /*------------------------------------*\
@@ -1278,7 +1418,7 @@ footer {
 
   .logo {
     left: 50%;
-    @include translate(-50%, -50%);
+    @include translate(-50%, 0);
     background-position: 0 -26px;
   }
 
@@ -1480,6 +1620,10 @@ footer {
     }
   }
 
+  input[type="submit"] {
+    -webkit-appearance: none;
+  }
+
   footer {
     padding: 50px 0;
     background-image: none;
@@ -1524,6 +1668,28 @@ footer {
       }
     }
   }
+
+  .citykey-philosophy h2 {
+    padding-bottom: 20px;
+  }
+
+  .citykey-philosophy h2,
+  .citykey-philosophy h2 + p {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .why-text {
+    display: block;
+    background-position: center bottom;
+    padding: 20px 20px 700px;
+    height: auto;
+    p, h2 {
+      text-align: center;
+    }
+  }
+
 }
 
 /*------------------------------------*\
@@ -1612,7 +1778,6 @@ footer {
     display: block;
     @include border-radius(6px);
     margin-bottom: 10px;
-    -webkit-appearance: none;
   }
 
   .step-2 {
@@ -1635,4 +1800,8 @@ footer {
     margin-top: 80px;
   }
 
+  .why-text {
+    background-size: 60%;
+    padding-bottom: 400px;
+  }
 }
