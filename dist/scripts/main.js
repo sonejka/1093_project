@@ -8,7 +8,6 @@ $(window).scroll(function() {
   }
 });
 
-
 window.onload = function() {
   $(function () {
     $(".menu-btn").click(function () {
@@ -23,22 +22,6 @@ window.onload = function() {
     $(".login-nav").removeClass("opened");
     $(".overlay").removeClass("active");
   });
-
-  //$( ".preference-1" ).hover(function() {
-  //  $(".drop-pin-1").toggleClass("opened");
-  //});
-  //$( ".preference-2" ).hover(function() {
-  //  $(".drop-pin-2").toggleClass("opened");
-  //});
-  //$( ".preference-3" ).hover(function() {
-  //  $(".drop-pin-3").toggleClass("opened");
-  //});
-  //$( ".preference-4" ).hover(function() {
-  //  $(".drop-pin-4").toggleClass("opened");
-  //});
-  //$( ".preference-5" ).hover(function() {
-  //  $(".drop-pin-5").toggleClass("opened");
-  //});
 
   $( ".preference-1" ).hover(function() {
     $(".preferences-list").toggleClass("drop-pin-1-bg");
@@ -55,6 +38,5 @@ window.onload = function() {
   $( ".preference-5" ).hover(function() {
     $(".preferences-list").toggleClass("drop-pin-5-bg");
   });
-
 
 }
