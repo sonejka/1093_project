@@ -188,12 +188,12 @@ p {
 }
 
 header {
-  padding: 27px 0 26px 0;
+  padding: 0 0 26px 0;
   position: fixed;
   width: 100%;
   z-index: 9999;
   transition: all 0.6s ease;
-  height: 90px;
+  height: 117px;
   &.sticky {
     background: #fad271;
     height: 79px;
@@ -217,7 +217,7 @@ header {
   height: 26px;
   width: 218px;
   position: absolute;
-  top: 0;
+  top: 27px;
   left: 16px;
 }
 
@@ -226,20 +226,26 @@ header {
   float: left;
   li {
     display: inline-block;
-    padding: 0 16px;
+    padding: 0 3px;
     a {
+      display: inline-block;
+      padding: 23px 13px 0;
       color: #fff;
       line-height: 26px;
       text-transform: uppercase;
       text-decoration: none;
+      border-top: 4px solid transparent;
+      //      @include transition(border-top, ease-in, 0.1s);
+
       &:hover {
-        text-decoration: underline;
+        border-top: 4px solid $accent-color-1;
       }
     }
     &.active a {
       color: $accent-color-1;
       font-weight: 900;
       font-family: "Lato", sans-serif;
+      border-top: 4px solid $accent-color-1;
     }
   }
 }
@@ -247,7 +253,7 @@ header {
 .login-nav {
   li {
     display: inline-block;
-    padding: 0 16px;
+    padding: 0 3px;
     a {
       font-family: 'Lato', sans-serif;
       font-weight: 700;
@@ -256,8 +262,11 @@ header {
       line-height: 26px;
       text-transform: uppercase;
       text-decoration: none;
+      display: inline-block;
+      padding: 23px 13px 0;
+      border-top: 4px solid transparent;
       &:hover {
-        text-decoration: underline;
+        border-top: 4px solid $accent-color-1;
       }
     }
     .icon-hotel {
@@ -282,10 +291,17 @@ header {
   .top-nav a, .top-nav li.active a {
     color: #44474c !important;
   }
+  .top-nav li.active a, .top-nav li a:hover {
+    border-top: 4px solid #535556;
+  }
   .login-nav {
     li {
       a {
         color: #44474c;
+        border-top: 4px solid transparent;
+        &:hover {
+          border-top: 4px solid #535556;
+        }
       }
       .icon-hotel {
         background-position: 0 -16px;
@@ -323,7 +339,7 @@ header {
     font-size: 24px;
     line-height: 39px;
     color: #fff;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -490,6 +506,7 @@ section {
     width: 60%;
     margin: auto;
     line-height: 1.66;
+    color: #acacac;
   }
 }
 
@@ -508,9 +525,19 @@ section {
   padding-top: 60px;
   h2 {
     color: #b7b7b7;
+    padding-bottom: 10px;
     strong {
       color: $accent-color-1;
     }
+  }
+}
+
+.step-1 {
+  > p {
+    width: 60%;
+    margin: auto;
+    line-height: 1.66;
+    color: #acacac;
   }
 }
 
@@ -621,8 +648,11 @@ i.step-icon-10 {
 .step-2 {
   padding: 60px 0 0;
   max-width: none;
-  h2 strong {
-    color: $accent-color-2;
+  h2 {
+    color: #b7b7b7;
+    strong {
+      color: $accent-color-2;
+    }
   }
 
   #tabs {
@@ -756,14 +786,20 @@ i.step-icon-10 {
 
 .step-3 {
   padding: 60px 0 0;
+  > p {
+    width: 60%;
+    margin: auto;
+    line-height: 1.66;
+    color: #acacac;
+  }
 }
 
 .preferences-list {
-  background: url($image_dir + "screen-pic.jpg") center 180px no-repeat;
-  height: 958px;
-  padding: 300px 0 0;
-  max-width: 1182px;
-  background-size: contain;
+  background: url($image_dir + "screen-pic.jpg") center 190px no-repeat;
+  background-size: 70%;
+  height: 680px;
+  max-width: 1060px;
+  margin: auto;
   position: relative;
   li[class*="preference-"] {
     cursor: pointer;
@@ -774,7 +810,7 @@ i.step-icon-10 {
     p {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
-      line-height: 1.9;
+      line-height: 1.6;
     }
     a.number {
       @include border-radius(50%);
@@ -806,51 +842,50 @@ i.step-icon-10 {
     }
   }
   .preference-1 {
-    top: 150px;
-    left: 5%;
+    top: 140px;
+    left: 10px;
   }
   .preference-2 {
-    top: 50px;
+    top: 20px;
     left: 33%;
   }
   .preference-3 {
-    top: 100px;
-    left: 66%;
+    top: 90px;
+    left: 67%;
   }
   .preference-4 {
-    top: 670px;
-    left: 5%;
+    top: 470px;
+    left: 20px;
   }
   .preference-5 {
-    top: 630px;
-    left: 64%;
+    top: 410px;
+    left: 67%;
   }
 }
 
 .preferences-list.drop-pin-1-bg {
   background-image: url($image_dir + "drop-pin-1-bg.png"), url($image_dir + "screen-pic.jpg");
-  background-size: contain;
+  background-size: 70%;
 }
 
 .preferences-list.drop-pin-2-bg {
   background-image: url($image_dir + "drop-pin-2-bg.png"), url($image_dir + "screen-pic.jpg");
-  background-size: contain;
+  background-size: 70%;
 }
 
 .preferences-list.drop-pin-3-bg {
   background-image: url($image_dir + "drop-pin-3-bg.png"), url($image_dir + "screen-pic.jpg");
-  background-size: contain;
+  background-size: 70%;
 }
 
 .preferences-list.drop-pin-4-bg {
   background-image: url($image_dir + "drop-pin-4-bg.png"), url($image_dir + "screen-pic.jpg");
-  background-size: contain;
+  background-size: 70%;
 }
 
 .preferences-list.drop-pin-5-bg {
   background-image: url($image_dir + "drop-pin-5-bg.png"), url($image_dir + "screen-pic.jpg");
-  background-size: contain;
-}
+  background-size: 70%;}
 
 /*------------------------------------*\
     STEP-4
@@ -867,6 +902,7 @@ i.step-icon-10 {
   padding: 60px 20px;
   h2 {
     margin-bottom: 60px;
+    color: #b7b7b7;
   }
   .publish-guide {
     display: table-cell;
@@ -913,9 +949,24 @@ i.step-icon-10 {
   padding-top: 10px;
   text-align: center;
 
+  strong {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  li p {
+    max-width: 250px;
+    padding: 20px 5px 10px;
+  }
+
+  li:last-child p {
+    max-width: 340px;
+  }
+
   li:after {
     left: 50%;
     @include translate(-50%, 0);
+    bottom: 35px;
   }
 
   .statbar-item-1 {
@@ -946,8 +997,10 @@ i.step-icon-10 {
     }
   }
 
-  .statbar-item-wrap {
+  li .statbar-item-wrap {
     position: relative;
+    padding-top: 50px;
+    height: 330px;
   }
 
   &:before {
@@ -1011,15 +1064,14 @@ i.step-icon-10 {
 \*------------------------------------*/
 
 .sign-up-bg {
-  background: #333 url($image_dir + "signup-bg.jpg") center 0 no-repeat;
+  background: #333 url($image_dir + "signup-bg.jpg") center 100% no-repeat;
   background-size: cover;
   height: 500px;
   padding-top: 228px;
 }
 
 .sign-up-wrap {
-  //  background: url($image_dir + "signup-text-bg.png") center 0 repeat-x;
-  background: rgba(255, 255, 255, .17);
+  background: rgba(0, 0, 0, .1);
   height: 272px;
   text-align: center;
 }
@@ -1131,10 +1183,10 @@ footer {
 .macbook-pic {
   background: url($image_dir + "macbook-pic.png") center no-repeat;
   background-size: contain;
-  height: 520px;
+  height: 450px;
   position: absolute;
   top: auto;
-  bottom: -170px;
+  bottom: -70px;
   width: 100%;
 }
 
@@ -1149,13 +1201,13 @@ footer {
 }
 
 .request-form-wrap {
-  margin-top: 230px;
+  margin-top: 90px;
   background: #f3f5f9;
 }
 
 .request-form {
   max-width: 1000px;
-  padding: 80px 20px;
+  padding: 60px 20px;
   h2, h2 + p {
     width: 30%;
     display: table-cell;
@@ -1295,6 +1347,7 @@ footer {
 
 .tiled-images {
   overflow: hidden;
+  text-align: center;
   li {
     position: relative;
     display: block;
@@ -1318,8 +1371,8 @@ footer {
       font-weight: 700;
       font-size: 28px;
       z-index: 2;
-//      opacity: 0;
-//      @include transition(opacity, linear , 0.1s)
+      //      opacity: 0;
+      //      @include transition(opacity, linear , 0.1s)
     }
 
     &:after {
@@ -1365,7 +1418,9 @@ footer {
       padding: 0 7px;
     }
   }
-  .create-guide p {
+  .create-guide p,
+  .step-1 > p,
+  .step-3 > p {
     width: 90%;
   }
 
@@ -1374,10 +1429,10 @@ footer {
     background-repeat: no-repeat;
   }
   .preferences-list .preference-4 {
-    top: 610px;
+    top: 460px;
   }
   .preferences-list .preference-5 {
-    top: 570px;
+    top: 440px;
   }
 
   .request-form .request-form-table .request-btn {
@@ -1398,6 +1453,7 @@ footer {
 @media screen and (max-width: 768px) {
   .header-container {
     padding-left: 0;
+    padding-top: 27px;
   }
   header {
     background: $accent-color-1;
@@ -1449,13 +1505,15 @@ footer {
         width: 100%;
         padding: 30px 0 30px 60px;
         border-bottom: 1px solid #e7c168;
+        border-top: 0;
         &:hover {
-          text-decoration: none;
+          border-top: 0;
         }
       }
       &.active a {
         font-weight: 900;
         color: #44474c;
+        border-top: 0;
       }
     }
   }
