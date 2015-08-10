@@ -1422,6 +1422,11 @@ footer {
 /*------------------------------------*\
     MODALS
 \*------------------------------------*/
+
+.modal {
+  background-color: rgba(0,0,0,0.5);
+}
+
 .modal-header, .modal-footer {
   padding: 10px 45px 10px;
   border: transparent;
