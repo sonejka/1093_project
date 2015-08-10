@@ -39,4 +39,36 @@ window.onload = function() {
     $(".preferences-list").toggleClass("drop-pin-5-bg");
   });
 
+  $(".forgot-pass-btn").click(function() {
+      $(".forgot-pass-form").removeClass("closed"),
+        $(".sign-in-form").addClass("closed")
+    }
+  ),
+    $(".back-to-login").click(function() {
+        $(".forgot-pass-form").addClass("closed"),
+          $(".sign-in-form").removeClass("closed")
+      }
+    ),
+
+    $(".hide-password").on("click", function() {
+        var a = $(this)
+          , b = a.prev("input");
+        "password" == b.attr("type") ? b.attr("type", "text") : b.attr("type", "password"),
+          a.text("Hide" == a.text() ? "Show" : "Hide"),
+          b.putCursorAtEnd()
+      }
+    )
+
+}
+
+
+jQuery.fn.putCursorAtEnd = function() {
+  return this.each(function() {
+      if (this.setSelectionRange) {
+        var a = 2 * $(this).val().length;
+        this.setSelectionRange(a, a)
+      } else
+        $(this).val($(this).val())
+    }
+  )
 }
