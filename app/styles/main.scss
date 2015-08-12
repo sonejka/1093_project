@@ -1280,6 +1280,7 @@ footer {
       &:hover {
         background: $accent-color-2;
         color: #fff;
+        text-decoration: none;
       }
     }
   }
@@ -2017,6 +2018,11 @@ footer {
   }
 
   .header-wrap-1 {
+    height: 504px;
+  }
+
+  .header-wrap-2,
+  .header-wrap-3 {
     height: 304px;
   }
 
