@@ -382,6 +382,7 @@ header {
   &:hover {
     color: #44474c;
     background-color: $accent-color-1;
+    text-decoration: none;
   }
 }
 
@@ -1280,7 +1281,6 @@ footer {
       &:hover {
         background: $accent-color-2;
         color: #fff;
-        text-decoration: none;
       }
     }
   }
