@@ -1551,6 +1551,21 @@ footer {
 }
 
 /*------------------------------------*\
+    FACEBOOK LOGIN BTN
+\*------------------------------------*/
+
+.fb-login {
+  padding-top: 10px;
+  font-size: 18px;
+  line-height: 1;
+  text-align: right;
+  .fb-login-button {
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+}
+
+/*------------------------------------*\
     BREAKPOINT  ---  860
 \*------------------------------------*/
 
@@ -1593,6 +1608,10 @@ footer {
 \*------------------------------------*/
 
 @media screen and (max-width: 768px) {
+
+  .fb-login {
+    font-size: 14px;
+  }
 
   .header-wrap-1 + section,
   .statbar-1,
@@ -2187,6 +2206,24 @@ footer {
 
   .modal-dialog {
     width: 280px;
+    .nav-tabs > li > a {
+      font-size: 12px;
+      padding: 5px 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      font-size: 14px;
+      height: 32px;
+      line-height: 32px;
+    }
+    .btn-primary {
+      font-size: 14px;
+      min-width: 0;
+      height: 32px;
+      line-height: 32px;
+    }
   }
 
   .statbar-2 li .statbar-item-wrap {
@@ -2320,3 +2357,7 @@ footer {
   }
 
 }
+
+
+
+
