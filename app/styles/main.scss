@@ -1448,6 +1448,10 @@ footer {
 }
 
 .login-modal {
+  .modal-header {
+    padding-bottom: 50px;
+  }
+
   .tab-pane {
     padding: 30px 0 10px;
   }
@@ -1548,22 +1552,50 @@ footer {
     font-size: 14px;
   }
 
-}
-
-/*------------------------------------*\
-    FACEBOOK LOGIN BTN
-\*------------------------------------*/
-
-.fb-login {
-  padding-top: 10px;
-  font-size: 18px;
-  line-height: 1;
-  text-align: right;
-  .fb-login-button {
-    vertical-align: middle;
-    margin-left: 10px;
+  .fb-login-btn {
+    background: #4464a2;
+    display: block;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    &:hover {
+      text-decoration: none;
+      background: #3c5990;
+    }
   }
+
+  .sign-in-heading,
+  .sign-up-heading {
+    position: absolute;
+    top: -50px;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $accent-color-2;
+    font-size: 24px;
+    p {
+      font-size: 14px;
+      padding-top: 5px;
+      color: #acacac;
+    }
+  }
+
 }
+
+///*------------------------------------*\
+//    FACEBOOK LOGIN BTN
+//\*------------------------------------*/
+//
+//.fb-login {
+//  padding-top: 10px;
+//  font-size: 18px;
+//  line-height: 1;
+//  text-align: right;
+//  .fb-login-button {
+//    vertical-align: middle;
+//    margin-left: 10px;
+//  }
+//}
 
 /*------------------------------------*\
     BREAKPOINT  ---  860
@@ -2353,6 +2385,29 @@ footer {
       display: block;
       background-size: contain;
       margin: 10px 0 0;
+    }
+  }
+
+
+  .login-modal {
+    .modal-body {
+      padding: 5px 15px 0;
+    }
+
+    .tab-pane {
+      padding: 10px 0;
+    }
+
+    .sign-in-heading,
+    .sign-up-heading {
+      font-size: 18px;
+      p {
+        font-size: 12px;
+        white-space: nowrap;
+      }
+    }
+    .sign-in-heading {
+      top: -40px;
     }
   }
 
